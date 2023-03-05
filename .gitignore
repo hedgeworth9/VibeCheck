@@ -1,6 +1,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/django,python,virtualenv
 # Edit at https://www.toptal.com/developers/gitignore?templates=django,python,virtualenv
 
+### NPM ###
+node_modules
+
 ### Django ###
 *.log
 *.pot
@@ -273,3 +276,4 @@ pyvenv.cfg
 pip-selfcheck.json
 
 # End of https://www.toptal.com/developers/gitignore/api/django,python,virtualenv
+.vercel
