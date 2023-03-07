@@ -1,0 +1,40 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+{% block body %}
+<div class="home">
+    <div class="home-body">
+        <div class="home-section-1">
+            <div class="home-section-1-left">
+                <div class="home-section-1-header">
+                    Planning to rent or own a residential
+                    unit? Not sure if it's
+                    <span class="home-section-1-header-highlight">
+                        earthquake-resistant?
+                    </span>
+                </div>
+                <div class="home-section-1-p">
+                    With Vibe Check, you can compare
+                    and contrast different units
+                    based on
+                    <span class="home-section-1-p-highlight">
+                        earthquake safety</span>,
+                    <span class="home-section-1-p-highlight">
+                        price</span>,
+                    <span class="home-section-1-p-highlight">
+                        convenience</span>!
+                </div>
+                <!-- <div class="home-section-1-button"> -->
+                <div>
+                    <button class="home-section-1-button">
+                        <div class="home-section-1-button-text">Learn more</div>
+                    </button>
+                </div>
+            </div>
+            <div class="home-section-1-right">
+                <img src = "{% static 'home-image1.png' %}">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
