@@ -1,3 +1,87 @@
+/* Base */
+.header {
+    position: absolute;
+    width: 1728px;
+    height: 144px;
+    left: 0px;
+    top: 0px;
+    
+}
+
+.header-logo {
+    position: absolute;
+    width: 300px;
+    height: 44.29px;
+    left: 99px;
+    top: 72px;
+}
+.header-menu {
+    position: absolute;
+    width: 865px;
+    height: 38px;
+    left: 779px;
+    top: 80px;    
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140.62%;
+    /* identical to box height, or 28px */
+    
+    color: black;
+}
+
+.header-menu-home {
+    position: absolute;
+    width: 58px;
+    height: 29px;
+    left: 115px;
+    top: 5px;    
+}
+
+.header-menu-checklist {
+    position: absolute;
+    width: 93px;
+    height: 29px;
+    left: 238px;
+    top: 5px;    
+}
+
+.header-menu-safety-portal {
+    position: absolute;
+    width: 127px;
+    height: 29px;
+    left: 396px;
+    top: 5px;
+}
+
+.header-menu-bar {
+    position: absolute;
+    left: 67.98%;
+    right: 31.68%;
+    top: 0%;
+    bottom: 0%;
+    
+    color: #C4C4C4;
+}
+
+.header-menu-sign-in {
+    position: absolute;
+    width: 66px;
+    height: 29px;
+    left: 656px;
+    top: 5px;    
+}
+
+.header-menu-sign-up {
+    position: absolute;
+    width: 74px;
+    height: 29px;
+    left: 787px;
+    top: 5px;
+}
+
 /* Home Page */
 .home {
     display: flex;
@@ -113,3 +197,135 @@ h1 {
     color: #3EB207;
 }
 
+.home-section-2 {
+    position: absolute;
+    width: 452.25px;
+    height: 265px;
+    left: 638px;
+    top: 760px;
+}
+
+
+.home-section-2-header {
+    position: absolute;
+    width: 351px;
+    height: 88px;
+    left: 51px;
+    top: 0px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: center;
+    
+    color: #000000;
+}
+
+.home-section-2-flags {
+    position: absolute;
+    width: 452.25px;
+    height: 72.25px;
+    left: 0px;
+    top: 113px;
+}
+
+.home-section-2-p {
+    position: absolute;
+    width: 538px;
+    height: 59px;
+    left: -43px;
+    top: 210.25px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    
+    color: #000000;
+}
+
+.home-section-3 {
+    position: absolute;
+    width: 1728px;
+    height: 568px;
+    left: 0px;
+    top: 1085px;
+}
+
+.home-section-3-left {
+    position: absolute;
+    width: 496px;
+    height: 348px;
+    left: 265px;
+    top: 110px;
+}
+
+.home-section-3-right-header {
+    position: absolute;
+    width: 332px;
+    height: 88px;
+    left: 1107px;
+    top: 114px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 44px;
+    text-align: right;
+    
+    color: #000000;
+}
+
+.home-section-3-right-p {
+    position: absolute;
+    width: 587px;
+    height: 140px;
+    left: 852px;
+    top: 228px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 145.23%;
+    /* or 23px */
+    
+    text-align: right;
+    
+    color: #000000;
+}
+
+.home-section-3-button {
+    position: absolute;
+    width: 200px;
+    height: 60px;
+    left: 1239px;
+    top: 394px;
+    
+    border: 3px solid #3EB207;
+    border-radius: 5px;
+}
+
+.home-section-3-button-text {
+    position: absolute;
+    height: 22px;
+    left: 25px;
+    right: 24px;
+    top: calc(50% - 22px/2);
+    
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #3EB207;
+}

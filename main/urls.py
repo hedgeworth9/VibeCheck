@@ -1,6 +1,12 @@
-from django.urls import path
-from main.views import home
+from django.urls import include, re_path, path
+from . import views
 
 urlpatterns = [
-    path('', home),
+    # Checklist
+    re_path(r'^checklist', views.checklist, name='checklist'),
+    
+    # Home
+    re_path('', views.home, name='home'),
+    
+
 ]

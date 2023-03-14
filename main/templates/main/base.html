@@ -3,6 +3,22 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 
+<div class="header">
+    <div class="header-logo">
+        <img src = "{% static 'vibe-check-logo.png' %}">
+    </div>
+    <div class="header-menu">
+        <div class="header-menu-home">
+            <a href="{% url 'home' %}">Home</a>
+        </div>
+        <div class="header-menu-checklist">
+            <a href="{% url 'checklist' %}">Checklist</a></div>
+        <div class="header-menu-safety-portal">Saftey Portal</div>
+        <div class="header-menu-bar">|</div>
+        <div class="header-menu-sign-in">Sign in</div>
+        <div class="header-menu-sign-up">Sign up</div>
+    </div>
+</div>
 {% block body %}
 
 {% endblock %}

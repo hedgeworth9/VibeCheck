@@ -7,3 +7,8 @@ def home(request):
     template = loader.get_template('main/home.html')
     context = {}
     return HttpResponse(template.render(context, request))
+
+def checklist(request):
+    template = loader.get_template('main/checklist.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
