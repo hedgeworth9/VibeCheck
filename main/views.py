@@ -36,6 +36,10 @@ def checklists(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
+def safety_portal(request):
+	template = loader.get_template('main/safety-portal.html')
+	context = {}
+	return HttpResponse(template.render(context, request))
 class PropertyCreateView(CreateView):
 	model = Property
 	fields = ['name', 'type', 'address', 'notes', 'image', 'safety', 'convenience'] 

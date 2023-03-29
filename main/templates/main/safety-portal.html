@@ -1,0 +1,57 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block body %}
+<script src="{% static 'js/safety_portal_script.js' %}"></script>
+<div class="safety-portal">
+    <div class="safety-portal-header">
+        Safety Portal
+    </div>
+    <div class="safety-portal-sites">
+        <div class="safety-portal-1">
+            <div class="safety-portal-1-image">
+                <img src="{% static 'ndrrmc.png' %}">
+            </div>
+            <div class="safety-portal-1-bar">
+                
+            </div>
+            <div class="safety-portal-1-text">
+                For monitoring disaster alerts and advisories and other disaster information
+            </div>
+        </div>
+        <div class="safety-portal-2">
+            <div class="safety-portal-2-image">
+                <img src="{% static 'hazard-hunter.png' %}">
+            </div>
+            <div class="safety-portal-2-bar">
+                
+            </div>
+            <div class="safety-portal-2-text">
+                For online hazard assessment
+            </div>
+        </div>
+        <div class="safety-portal-3">
+            <div class="safety-portal-3-image">
+                <img src="{% static 'phivolcs.png' %}">
+            </div>
+            <div class="safety-portal-3-bar">
+                
+            </div>
+            <div class="safety-portal-3-text">
+                For measuring the distance of a location from the nearest fault lines
+            </div>
+            <span class="safety-portal-detective-image">
+                <img src="{% static 'detective.png' %}">
+            </span>
+            <span class="safety-portal-detective-modal">
+                <span class="safety-portal-detective-modal-text">
+                    You may use these external links to expand your knowledge about disaster-preparedness!
+                </span>
+                <button class="safety-portal-detective-modal-button" onclick="hide(this)">
+                    <img src="{% static 'detective_modal_button.png'%}">
+                </button>
+            </span>
+        </div>
+    </div>
+</div>
+{% endblock %}

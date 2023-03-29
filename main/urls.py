@@ -2,6 +2,9 @@ from django.urls import include, re_path, path
 from . import views
 
 urlpatterns = [
+    # Safety Portal
+    re_path(r'^safety-portal', views.safety_portal, name='safety-portal'),
+
     # Checklist
     re_path(r'^checklists/new-checklist', views.PropertyCreateView.as_view(), name='new-checklist'),
     re_path(r'^checklists', views.checklists, name='checklist'),

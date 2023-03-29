@@ -1,3 +1,114 @@
+/* Safety Portal */
+.safety-portal {
+    display: flex;
+    flex-direction: column;
+    padding-top: 5%;
+    margin: 2%;
+}
+
+.safety-portal-detective-modal-button {
+    position: absolute;
+    background: none;
+    object-fit: contain;
+    width: 10%;
+    border: none;
+
+    left: 67vh;
+    top: -2vh;
+    cursor: pointer;
+}
+.safety-portal-sites {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+}
+
+.safety-portal-detective-modal-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+    
+    color: #4CAB3C;
+    text-align: center;
+    margin: 2%;
+}
+    
+.safety-portal-detective-modal {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    width: 70vh;
+    height: 20vh;
+    left: 100vh;
+    top: 20vh;
+
+
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    background: #D4F6C3;
+    border: 1px solid #D4F6C3;
+    border-radius: 2px;
+}
+
+.safety-portal-detective-image {
+    position: absolute;
+    object-fit: contain;
+    width: 20%;
+    /* width: 271px;
+    height: 454px; */
+    left: 170vh;
+    top: 30vh;
+    
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.safety-portal-1-text, .safety-portal-2-text, .safety-portal-3-text {
+    margin: 2%;
+}
+.safety-portal-1-bar, .safety-portal-2-bar, .safety-portal-3-bar {
+    opacity: 0.2;
+    border: 2px solid #505358;
+    
+    height: 20vh;
+
+    /* transform: rotate(90deg); */
+}
+
+.safety-portal-1 img {
+    object-fit: contain;
+    width: 70%;
+}
+
+.safety-portal-2 img {
+    object-fit: contain;
+    width: 70%;
+}
+
+.safety-portal-3 img {
+    object-fit: contain;
+    width: 70%;
+}
+
+.safety-portal-header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
+    
+    letter-spacing: -0.02em;
+    vertical-align: middle;
+    
+    color: #505358;
+}
+
+.safety-portal-1, .safety-portal-2, .safety-portal-3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+
 /* Property Create View */
 .new-checklist {
     display: flex;
@@ -291,11 +402,14 @@
 
 /* Base */
 .footer {
-    width: 70%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* width: 70%; */
     justify-content: space-between;
-    align-self: center;
-    /* padding-left: 10%;
-    padding-right:10%; */
+    padding-left: 10%;
+    padding-right:10%;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 700;
@@ -303,9 +417,7 @@
     line-height: 140.62%;
     /* identical to box height, or 22px */
     
-    display: flex;
-    align-items: center;
-    text-align: center;
+    
     
     color: #505358;
 }
