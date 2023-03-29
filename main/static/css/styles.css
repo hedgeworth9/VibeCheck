@@ -1,3 +1,64 @@
+/* Property Create View */
+.new-checklist {
+    display: flex;
+    padding-top: 5%;
+    flex-direction: column;
+}
+
+.new-checklist-section-1 {
+    display: flex;
+    padding-top: 5%;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.new-checklist-section-2 {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.new-checklist-form-element {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 5%;
+}
+
+.section-price, .section-safety, .section-convenience {
+    background: #EDEFF2;
+    border-radius: 12px;
+    margin: 1%;
+    padding: 2%;
+}
+
+.new-checklist-buttons {
+    display:flex;
+    width: 30%;
+    justify-content: space-between;
+}
+
+.property-input-field {
+    background: #EDEFF2;
+    border-radius: 12px;
+
+    height: 5vh;
+    width: 50vh;
+}
+
+.property-input-field::placeholder {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    
+    color: #505358;
+}
+
 /* Checklist */
 .checklist {
     display: flex;
@@ -229,6 +290,26 @@
 }
 
 /* Base */
+.footer {
+    width: 70%;
+    justify-content: space-between;
+    align-self: center;
+    /* padding-left: 10%;
+    padding-right:10%; */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140.62%;
+    /* identical to box height, or 22px */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #505358;
+}
+
 .header {
     position: fixed;
     display: flex;

@@ -1,0 +1,407 @@
+{% extends 'main/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block body %}
+<script src = "{% static 'js/checklist_script.js' %}"></script>
+<div class="new-checklist">
+    {% csrf_token %}
+    <form method="POST" class="new-checklist-form-element">
+        <div class="new-checklist-section-1">
+            <div class="new-checklist-header">
+                + New Checklist
+            </div>
+            <div class="new-checklist-buttons">
+                <div>
+                    <button class="new-checklist-save-button">
+                        Save
+                    </button>
+                </div>
+                <div>
+                    <button class="new-checklist-cancel-button">
+                        Cancel
+                    </button>
+                </div>
+                <div>
+                    <button class="new-checklist-delete-button">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="new-checklist-section-2">
+            <div class="new-checklist-section-2-left">
+                <div class="property-name">
+                    {{ form.name|add_class:"property-input-field" }}
+                </div>
+                <div class="property-type">
+                    {{ form.type|add_class:"property-input-field" }}
+                </div>
+                <div class="property-address">
+                    {{ form.address|add_class:"property-input-field" }}
+                </div>
+                <div class="property-notes">
+                    {{ form.notes|add_class:"property-input-field" }}
+                </div>
+            </div>
+            <div class="new-checklist-section-2-right">
+                <div class="property-image">
+                    {{ form.image|add_class:"property-input-field" }}
+                </div>
+            </div>
+        </div>
+        <div class="new-checklist-section-3">
+            <div class="section-price" id="section-price">
+                <div class="section-price-header">
+                    Price
+                </div>
+                <div class="section-price-details">
+                    <div class="section-price-question">
+                        1. Is it within your desired price range?*
+                    </div>
+                    <div class="section-price-buttons">
+                        <div>
+                            <input type="radio" id="budget-1" name="property-price">
+                            <label for="budget-1">Within budget</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="budget-2" name="property-price">
+                            <label for="budget-2">Overbudget</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-safety" id="section-safety">
+                <div class="section-safety-header">
+                    Safety
+                </div>
+
+                <div class="section-safety-1-details">
+                    <div class="section-safety-1-question">
+                        2. When was the building constructed?*
+                    </div>
+                    <div class="section-safety-1-buttons">
+                        <div>
+                            <input type="radio" id="safety-1-1" name="property-safety-1">
+                            <label for="safety-1-1">Less than 5 years</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-1-2" name="property-safety-1">
+                            <label for="safety-1-2">Less than 10 years</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-1-3" name="property-safety-1">
+                            <label for="safety-1-3">More than 10 years</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-2-details">
+                    <div class="section-safety-2-question">
+                        3. Does the building adhere to building codes?*
+                    </div>
+                    <div class="section-safety-2-buttons">
+                        <div>
+                            <input type="radio" id="safety-2-1" name="property-safety-2">
+                            <label for="safety-2-1">Yes</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-2-2" name="property-safety-2">
+                            <label for="safety-2-2">Unsure</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-2-3" name="property-safety-2">
+                            <label for="safety-2-3">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-3-details">
+                    <div class="section-safety-3-question">
+                        4. Is the building on a fault line (or near one)?*
+                    </div>
+                    <div class="section-safety-3-buttons">
+                        <div>
+                            <input type="radio" id="safety-3-1" name="property-safety-3">
+                            <label for="safety-3-1">No</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-3-2" name="property-safety-3">
+                            <label for="safety-3-2">Less than 1 kilometer away from a fault line</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-3-3" name="property-safety-3">
+                            <label for="safety-3-3">Less than 5 meters away from or directly on top of a fault line</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-4-details">
+                    <div class="section-safety-4-question">
+                        5. Has the building been retrofitted?*
+                    </div>
+                    <div class="section-safety-4-buttons">
+                        <div>
+                            <input type="radio" id="safety-4-1" name="property-safety-4">
+                            <label for="safety-4-1">Yes/Doesn't need retrofitting at present</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-4-2" name="property-safety-4">
+                            <label for="safety-4-2">Unsure</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-4-3" name="property-safety-4">
+                            <label for="safety-4-3">Needs to undergo retrofitting</label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section-safety-5-details">
+                    <div class="section-safety-5-question">
+                        6. Are there foundation issues?*
+                    </div>
+                    <div class="section-safety-5-buttons">
+                        <div>
+                            <input type="radio" id="safety-5-1" name="property-safety-5">
+                            <label for="safety-5-1">No issues/Resolved issues</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-5-2" name="property-safety-5">
+                            <label for="safety-5-2">Issues present, unsure if resolved</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-5-3" name="property-safety-5">
+                            <label for="safety-5-3">Issues present and unresolved</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-6-details">
+                    <div class="section-safety-6-question">
+                        7. What kind of soil is underneath the building?*
+                    </div>
+                    <div class="section-safety-6-buttons">
+                        <div>
+                            <input type="radio" id="safety-6-1" name="property-safety-6">
+                            <label for="safety-6-1">Firm soil</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-6-2" name="property-safety-6">
+                            <label for="safety-6-2">Unsure</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-6-3" name="property-safety-6">
+                            <label for="safety-6-3">Loose soil</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-7-details">
+                    <div class="section-safety-7-question">
+                        8. How tall is the building?*
+                    </div>
+                    <div class="section-safety-7-buttons">
+                        <div>
+                            <input type="radio" id="safety-7-1" name="property-safety-7">
+                            <label for="safety-7-1">Lowrise (1 to 4 storeys)</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-7-2" name="property-safety-7">
+                            <label for="safety-7-2">Midrise (5 to 15 storeys)</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-7-3" name="property-safety-7">
+                            <label for="safety-7-3">Highrise (at least 16 storeys or 48 meters high)</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-8-details">
+                    <div class="section-safety-8-question">
+                        9. Is the building insured for earthquake damage and other types of disasters?*
+                    </div>
+                    <div class="section-safety-8-buttons">
+                        <div>
+                            <input type="radio" id="safety-8-1" name="property-safety-8">
+                            <label for="safety-8-1">Insured</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-8-2" name="property-safety-8">
+                            <label for="safety-8-2">Incomplete insurance (e.g. has fire insurance but no earthquake insurance)</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-8-3" name="property-safety-8">
+                            <label for="safety-8-3">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-9-details">
+                    <div class="section-safety-9-question">
+                        10. Has the building been affected by a previous disaster?*
+                    </div>
+                    <div class="section-safety-9-buttons">
+                        <div>
+                            <input type="radio" id="safety-9-1" name="property-safety-9">
+                            <label for="safety-9-1">It withstood the disaster and did not need to undergo repairs</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-9-2" name="property-safety-9">
+                            <label for="safety-9-2">The building withstood some minor damage but it has been properly repaired since then</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-9-3" name="property-safety-9">
+                            <label for="safety-9-3">There was grave damage and it has not been properly repaired</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-10-details">
+                    <div class="section-safety-10-question">
+                        11. Are there functional fire exits?*
+                    </div>
+                    <div class="section-safety-10-buttons">
+                        <div>
+                            <input type="radio" id="safety-10-1" name="property-safety-10">
+                            <label for="safety-10-1">Fully-functional</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-10-2" name="property-safety-10">
+                            <label for="safety-10-2">Signs of aging and needs upkeep but not worrisome</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-10-3" name="property-safety-10">
+                            <label for="safety-10-3">Completely impassable, worrisome decline</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-11-details">
+                    <div class="section-safety-11-question">
+                        12. Where is the gas shut-off valve?*
+                    </div>
+                    <div class="section-safety-11-buttons">
+                        <div>
+                            <input type="radio" id="safety-11-1" name="property-safety-11">
+                            <label for="safety-11-1">Fully-functional</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-11-2" name="property-safety-11">
+                            <label for="safety-11-2">Faulty</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-12-details">
+                    <div class="section-safety-12-question">
+                        13. Where is the nearest evacuation zone in case of an emergency?*
+                    </div>
+                    <div class="section-safety-12-buttons">
+                        <div>
+                            <input type="radio" id="safety-12-1" name="property-safety-12">
+                            <label for="safety-12-1">Nearby</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-12-2" name="property-safety-12">
+                            <label for="safety-12-2">Not too far</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-12-3" name="property-safety-12">
+                            <label for="safety-12-3">Far away</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-safety-13-details">
+                    <div class="section-safety-13-question">
+                        14. Are there hospitals, police stations, and fire stations nearby?*
+                    </div>
+                    <div class="section-safety-13-buttons">
+                        <div>
+                            <input type="radio" id="safety-13-1" name="property-safety-13">
+                            <label for="safety-13-1">Nearby</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-13-2" name="property-safety-13">
+                            <label for="safety-13-2">Not too far</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="safety-13-3" name="property-safety-13">
+                            <label for="safety-13-3">Far away</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-convenience" id="section-convenience">
+                <div class="section-convenience-header">
+                    Convenience
+                </div>
+                <div class="section-convenience-details">
+                    <div class="section-convenience-question">
+                        15. What essential institutions are nearby/easily accessible?*
+                    </div>
+                    <div class="section-convenience-chekboxes">
+                        <div>
+                            <input type="checkbox" id="convenience-1" name="convenience">
+                            <label for="convenience-1">Hospital</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-2" name="convenience">
+                            <label for="convenience-2">Police Station</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-3" name="convenience">
+                            <label for="convenience-3">Fire Station</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-4" name="convenience">
+                            <label for="convenience-4">School</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-5" name="convenience">
+                            <label for="convenience-5">Workplace</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-6" name="convenience">
+                            <label for="convenience-6">Grocery or Market</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-7" name="convenience">
+                            <label for="convenience-7">Laundromat</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-8" name="convenience">
+                            <label for="convenience-8">Water Filling Station</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-9" name="convenience">
+                            <label for="convenience-9">Restaurant</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-10" name="convenience">
+                            <label for="convenience-10">Mall</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-11" name="convenience">
+                            <label for="convenience-11">Bills Payment Center</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-12" name="convenience">
+                            <label for="convenience-12">Transport Terminal</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-13" name="convenience">
+                            <label for="convenience-13">Gas Station Terminal</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="convenience-14" name="convenience">
+                            <label for="convenience-14">Other</label>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </form>
+
+</div>
+{% endblock %}
