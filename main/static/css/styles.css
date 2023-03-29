@@ -2,6 +2,117 @@
 .checklist {
     display: flex;
     padding-top: 5%;
+    flex-direction: column;
+}
+
+.my-checklists-header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
+    
+    letter-spacing: -0.02em;
+    
+    color: #505358;
+}
+
+.new-checklist-button {
+    height: 30vh;
+    width: 20vh;
+    border: 4px dashed #C4C4C4;
+    border-radius: 7px;
+
+    background: white;
+}
+
+.new-checklist-button-text-plus {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 140.62%;
+    /* or 90px */
+    
+    color: #C4C4C4;
+}
+
+.new-checklist-button-text-create-new {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 140.62%;
+    /* or 28px */
+    
+    text-align: center;
+    
+    color: #C4C4C4;
+    
+}
+.checklist-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+    height: 40%;
+    margin: 0 auto;
+    align-items: center;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+}
+
+.checklist-modal-header {
+    padding: 2%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 140.62%;
+    
+    text-align: center;
+    
+    color: #505358;
+}
+
+.checklist-modal-text {
+    width: 50%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140.62%;
+    /* or 22px */
+    
+    text-align: center;
+    
+    color: #505358;
+}
+
+.checklist-modal-circles {
+    display: flex;
+    padding: 2%;
+    width: 20%;
+    justify-content: space-between;
+}
+
+.circle-green {
+    height: 2vh;
+    width: 2vh;
+    background-color: #4CAB3C;
+    border-radius: 50%;
+}
+
+.circle-gray {
+    height: 2vh;
+    width: 2vh;
+    background-color: C4C4C4;
+    border-radius: 50%;
 }
 
 /* Sign Up */
