@@ -1,8 +1,121 @@
+/* Sign Up */
+.signup {
+    display: flex;
+    padding-top: 5%;
+    justify-content: center;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60vh;
+    justify-content: space-between;
+
+    padding-top: 3%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    
+    /* 9 black */
+    
+    color: #000000;
+}
+
+.signup-header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    
+    padding-bottom: 2.5vh;
+    letter-spacing: -0.02em;
+    
+    color: #5A6474;
+}
+
+.signup-form-input-fields {
+    height: 100vh;
+}
+
+.signup-form-element {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 50vh;
+}
+
+.signup-input-field {
+    background: #EDEFF2;
+    border-radius: 12px;
+    border-color: #EDEFF2;
+
+    height: 5vh;
+    width: 100%;
+}
+
+.signup-form-signin-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140.62%;
+    /* or 22px */
+    
+    
+    color: #000000;   
+}
+
+.signup-form-button-wrap {
+    text-align: center;
+}
+
+.signup-form-button {
+    display: flex;
+    margin: auto;
+    align-items: stretch;
+    text-align: center;
+
+    background: #3EB207;
+    border-radius: 5px;
+    border-color: #3EB207;
+    height: 8vh;
+    width: 25vh;
+
+}
+
+.signup-form-button-text {
+    display: flex;
+    margin: auto;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #FFFFFF;
+}
+
+/* Signup Success */
+.signup-success-body {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 10%;
+}
+
 /* Base */
 .header {
     position: fixed;
     display: flex;
-    z-index: 99;
+    order: 1;
 
     top: 0;
     width: 100%;
@@ -35,25 +148,9 @@
     
     color: black;
 }
-
-.header-menu-home {
-}
-
-.header-menu-checklist {
-}
-
-.header-menu-safety-portal {
-}
-
 .header-menu-bar {
     
     color: #C4C4C4;
-}
-
-.header-menu-sign-in {
-}
-
-.header-menu-sign-up {
 }
 
 /* Home Page */

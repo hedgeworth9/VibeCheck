@@ -5,8 +5,10 @@ urlpatterns = [
     # Checklist
     re_path(r'^checklist', views.checklist, name='checklist'),
     
-    # Home
-    re_path('', views.home, name='home'),
-    
+    # Register
+    re_path(r'^signup-success', views.signup_success, name='signup-success'),
+    re_path(r'^signup', views.signup, name='signup'),
 
+    # Home
+    re_path(r'^home', views.home, name='home'),
 ]

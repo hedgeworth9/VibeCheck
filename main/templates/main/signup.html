@@ -1,0 +1,53 @@
+{% extends "main/base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}      
+
+<!--Register--> 
+<div class="signup">
+	<div class="signup-form">
+		<div class="signup-header">Sign Up</div>
+		<div class="signup-form-inputs">
+		<form method="POST" class="signup-form-element">
+			{% csrf_token %}
+			<div class="signup-username">
+				{{ register_form.username.errors }}
+				<div class="signup-username-label">
+				{{ register_form.username.label_tag }}
+				</div>
+				{{ register_form.username|add_class:"signup-input-field" }}
+			</div>
+			<div class="signup-email">
+				{{ register_form.email.errors }}
+				<div class="signup-email-label">
+				{{ register_form.email.label_tag }}
+				</div>
+				{{ register_form.email|add_class:"signup-input-field" }}
+			</div>
+			<div class="signup-password">
+				{{ register_form.password1.errors }}
+				<div class="signup-password-label">
+				{{ register_form.password1.label_tag }}
+				</div>
+				{{ register_form.password1|add_class:"signup-input-field" }}
+			</div>
+			<div class="signup-confirm-password">
+				{{ register_form.password2.errors }}
+				<div class="signup-confirm-password">
+				{{ register_form.password2.label_tag }}
+				</div>
+				{{ register_form.password2|add_class:"signup-input-field" }}
+			</div>
+		</form>
+		</div>
+		<p class="signup-form-button-wrap">
+			<button class="signup-form-button" type="submit">
+				<div class="signup-form-button-text">Submit</div>
+			</button>
+		</p>
+		<div class="signup-form-signin-text">
+			Already have an account? <a href="#">Sign in.</a>
+		</div>
+	</div>
+</div>
+{% endblock %}
