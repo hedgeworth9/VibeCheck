@@ -29,8 +29,10 @@ def signup(request):
 def signup_success(request):
 	template = loader.get_template('main/signup-success.html')
 	context = {}
-	return HttpResponse(template.render(context, request)
-		     )
+	return HttpResponse(template.render(context, request))
+
+def signin(request):
+	return render(request, signin.html)
 def checklists(request):
     template = loader.get_template('main/checklist.html')
     context = {}

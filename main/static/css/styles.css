@@ -195,6 +195,7 @@
     width: 20vh;
     border: 4px dashed #C4C4C4;
     border-radius: 7px;
+    cursor: pointer;
 
     background: white;
 }
@@ -292,16 +293,17 @@
     display: flex;
     padding-top: 5%;
     justify-content: center;
+    margin:5%;
 }
 
 .signup-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 60vh;
+    height:80vh;
     justify-content: space-between;
 
-    padding-top: 3%;
+    /* padding-top: 3%; */
 
     font-family: 'Inter';
     font-style: normal;
@@ -361,6 +363,12 @@
     color: #000000;   
 }
 
+.signup-form-signin-text a {
+    all: unset;
+    cursor: pointer;
+    color: #4CAB3C;
+}
+
 .signup-form-button-wrap {
     text-align: center;
 }
@@ -376,7 +384,7 @@
     border-color: #3EB207;
     height: 8vh;
     width: 25vh;
-
+    cursor: pointer;
 }
 
 .signup-form-button-text {
@@ -395,9 +403,84 @@
 /* Signup Success */
 .signup-success-body {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 100%;
     padding-top: 10%;
+    margin-bottom: 2%;
+}
+
+.signup-success {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* width: 100%; */
+    height: 70vh;
+}
+
+.signup-success-header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    
+    letter-spacing: -0.02em;
+    
+    /* 9 black */
+    
+    color: #000000;
+}
+
+.signup-success-p {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    
+    color: #505358;
+}
+
+.signup-success-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #4CAB3C;
+    border-radius: 5px;
+    border-color: #4CAB3C;
+    cursor: pointer;
+
+    width: 25vh;
+    height: 10vh;
+}
+
+.signup-success-button-text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #FFFFFF;
+    
+}
+
+.signup-success-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.signup-success-image img {
+    object-fit: contain;
+    width: 50%;
 }
 
 /* Base */
