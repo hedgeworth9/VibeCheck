@@ -114,6 +114,86 @@
     display: flex;
     padding-top: 5%;
     flex-direction: column;
+    width: 100%;
+}
+
+.new-checklist-header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 27px;
+    /* identical to box height */
+    
+    letter-spacing: -0.02em;
+    
+    color: #505358;
+}
+.new-checklist-save-button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    background: #4CAB3C;
+    border-radius: 5px;
+    border: none;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    
+    color: #FFFFFF;
+
+    width: 20vh;
+    height: 5vh;
+}
+
+.new-checklist-cancel-button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    border: 3px solid #505358;
+    border-radius: 5px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    
+    color: #505358;
+
+    width: 20vh;
+    height: 5vh;
+}
+
+.new-checklist-delete-button {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+    border: 3px solid #EA5838;
+    border-radius: 5px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    
+    color: #EA5838;
+
+    width: 20vh;
+    height: 5vh;
 }
 
 .new-checklist-section-1 {
@@ -132,41 +212,84 @@
 .new-checklist-form-element {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 
-    width: 100%;
+    /* width: 100%; */
     padding: 5%;
 }
 
 .section-price, .section-safety, .section-convenience {
+    display: flex;
+    column-gap: 10%;
+
     background: #EDEFF2;
     border-radius: 12px;
     margin: 1%;
     padding: 2%;
+    gap: 1%;
+}
+
+.section-price-header, .section-safety-header, .section-convenience-header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    letter-spacing: -0.02em;
+    
+    color: #505358;
+    
+}
+
+.section-price-header {
+    padding-right: 8%;
+}
+
+.section-safety-header {
+    padding-right: 6%;
+}
+.section-price-question, .section-safety-question, .section-convenience-question {
+    margin-bottom: 1%;
+    font-family: 'Inter';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 140.62%;
+    /* identical to box height, or 31px */
+    
+    
+    color: #505358;
+}
+
+.section-price-details, .section-safety-details, .section-convenience-details {
+    margin-left: 5%;
 }
 
 .new-checklist-buttons {
     display:flex;
-    width: 30%;
+    width: 40%;
     justify-content: space-between;
 }
 
 .property-input-field {
     background: #EDEFF2;
     border-radius: 12px;
-
+    border: none;
+    margin: 2%;
     height: 5vh;
-    width: 50vh;
+    width: 70vh;
 }
 
 .property-input-field::placeholder {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1816x;
     line-height: 24px;
     letter-spacing: -0.02em;
-    
+        
     color: #505358;
 }
 
