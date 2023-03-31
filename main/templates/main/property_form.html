@@ -14,7 +14,7 @@
             </div>
             <div class="new-checklist-buttons">
                 <div>
-                    <button class="new-checklist-save-button" onclick="window.location='{% url 'home' %}'">
+                    <button class="new-checklist-save-button" onclick="window.location='{% url 'checklist-filled' %}'">
                         Save
                     </button>
                 </div>
@@ -409,7 +409,7 @@
     <div class="new-checklist-score">
         <div class="new-checklist-buttons">
             <div>
-                <button class="new-checklist-save-button">
+                <button class="new-checklist-save-button" onclick="window.location='{% url 'checklist-filled' %}'">
                     Save
                 </button>
             </div>

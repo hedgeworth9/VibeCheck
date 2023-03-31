@@ -1,0 +1,32 @@
+{% extends 'main/base-signed-in.html' %}
+{% load static %}
+
+{% block body %}
+<div class="checklist">
+    <div class="my-checklists-header">
+        My Checklists
+    </div>
+    <div class="checklist-filled">
+        <div class="checklist-filler">
+            <button class="new-checklist-button" onclick="location.href = '{% url 'new-checklist' %}'">
+                <div class="new-checklist-button-text">
+                    <p class="new-checklist-button-text-plus">+</p> 
+                    <p class="new-checklist-button-text-create-new">Create New</p>
+                </div>
+            </button>
+        </div>
+        <div class="checklist-filler">
+            <img src="{% static 'vista.png' %}">
+        </div>
+        <div class="checklist-filler">
+            <img src="{% static 'prince-david.png' %}">
+        </div>
+        <div class="checklist-filler">
+            <img src="{% static 'berkeley.png' %}">
+        </div>
+        <div class="checklist-filler">
+            <img src="{% static 'blue.png' %}">
+        </div>
+    </div>
+</div>
+{% endblock %}

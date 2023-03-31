@@ -3,6 +3,21 @@ button {
     cursor: pointer;
 }
 
+.checklist-filled {
+    display: flex;
+    flex-direction:row;
+    height: 80vh;
+}
+
+.checklist-filler {
+    width: 80vh;
+}
+
+.checklist-filler img {
+    object-fit: contain;
+    width: 28vh;
+}
+
 /* Profile */
 .profile {
     display: flex;

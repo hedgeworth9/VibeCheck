@@ -64,7 +64,10 @@ def profile(request):
     context = {}
     return HttpResponse(template.render(context, request))
 
-      
+def checklist_filled(request):
+    template = loader.get_template('main/checklist-filled.html')
+    context = {}
+    return HttpResponse(template.render(context, request))        
 
 def checklists(request):
     template = loader.get_template('main/checklist.html')
