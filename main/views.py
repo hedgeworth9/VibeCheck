@@ -46,7 +46,26 @@ def signup_success(request):
 	return HttpResponse(template.render(context, request))
 
 def signin(request):
-	return render(request, signin.html)
+    if request.method == 'POST':
+            form = NewUserForm(request.POST)
+            if form.is_valid():
+                form.save()
+                username = form.cleaned_data.get('username')
+                raw_password = form.cleaned_data.get('password1')
+                user = authenticate(username=username, password=raw_password)
+                login(request, user)
+                return redirect('/signup-success/')
+    else:
+        form = NewUserForm()
+    return render(request, 'main/signin.html', {'register_form': form})
+
+def profile(request):
+    template = loader.get_template('main/profile.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
+
+      
+
 def checklists(request):
     template = loader.get_template('main/checklist.html')
     context = {}

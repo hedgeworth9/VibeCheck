@@ -1,4 +1,4 @@
-{% extends 'main/base.html' %}
+{% extends 'main/base-signed-in.html' %}
 {% load widget_tweaks %}
 {% load static %}
 
@@ -6,19 +6,20 @@
 <script src = "{% static 'js/checklist_script.js' %}"></script>
 <div class="new-checklist">
     {% csrf_token %}
-    <form method="POST" class="new-checklist-form-element">
+    <!-- <form method="POST" class="new-checklist-form-element"></form> -->
+    <form class="new-checklist-form-element">
         <div class="new-checklist-section-1">
             <div class="new-checklist-header">
                 + New Checklist
             </div>
             <div class="new-checklist-buttons">
                 <div>
-                    <button class="new-checklist-save-button">
+                    <button class="new-checklist-save-button" onclick="window.location='{% url 'home' %}'">
                         Save
                     </button>
                 </div>
                 <div>
-                    <button class="new-checklist-cancel-button">
+                    <button class="new-checklist-cancel-button" onclick="window.location='{% url 'checklist' %}'">
                         Cancel
                     </button>
                 </div>
@@ -46,7 +47,7 @@
             </div>
             <div class="new-checklist-section-2-right">
                 <div class="property-image">
-                    {{ form.image|add_class:"property-input-field" }}
+                    {{ form.image|add_class:"property-input-field-image" }}
                 </div>
             </div>
         </div>
@@ -65,7 +66,7 @@
                             <label for="budget-1">Within budget</label>
                         </div>
                         <div>
-                            <input type="radio" id="budget-2" name="property-price">
+                            <input type="radio" id="budget-2" name="property-price" checked>
                             <label for="budget-2">Overbudget</label>
                         </div>
                     </div>
@@ -90,7 +91,7 @@
                                 <label for="safety-1-2">Less than 10 years</label>
                             </div>
                             <div>
-                                <input type="radio" id="safety-1-3" name="property-safety-1">
+                                <input type="radio" id="safety-1-3" name="property-safety-1" checked>
                                 <label for="safety-1-3">More than 10 years</label>
                             </div>
                         </div>
@@ -102,7 +103,7 @@
                         </div>
                         <div class="section-safety-2-buttons">
                             <div>
-                                <input type="radio" id="safety-2-1" name="property-safety-2">
+                                <input type="radio" id="safety-2-1" name="property-safety-2" checked>
                                 <label for="safety-2-1">Yes</label>
                             </div>
                             <div>
@@ -122,7 +123,7 @@
                         </div>
                         <div class="section-safety-3-buttons">
                             <div>
-                                <input type="radio" id="safety-3-1" name="property-safety-3">
+                                <input type="radio" id="safety-3-1" name="property-safety-3" checked>
                                 <label for="safety-3-1">No</label>
                             </div>
                             <div>
@@ -142,7 +143,7 @@
                         </div>
                         <div class="section-safety-4-buttons">
                             <div>
-                                <input type="radio" id="safety-4-1" name="property-safety-4">
+                                <input type="radio" id="safety-4-1" name="property-safety-4" checked>
                                 <label for="safety-4-1">Yes/Doesn't need retrofitting at present</label>
                             </div>
                             <div>
@@ -162,7 +163,7 @@
                         </div>
                         <div class="section-safety-5-buttons">
                             <div>
-                                <input type="radio" id="safety-5-1" name="property-safety-5">
+                                <input type="radio" id="safety-5-1" name="property-safety-5" checked>
                                 <label for="safety-5-1">No issues/Resolved issues</label>
                             </div>
                             <div>
@@ -182,7 +183,7 @@
                         </div>
                         <div class="section-safety-6-buttons">
                             <div>
-                                <input type="radio" id="safety-6-1" name="property-safety-6">
+                                <input type="radio" id="safety-6-1" name="property-safety-6" checked>
                                 <label for="safety-6-1">Firm soil</label>
                             </div>
                             <div>
@@ -206,7 +207,7 @@
                                 <label for="safety-7-1">Lowrise (1 to 4 storeys)</label>
                             </div>
                             <div>
-                                <input type="radio" id="safety-7-2" name="property-safety-7">
+                                <input type="radio" id="safety-7-2" name="property-safety-7" checked>
                                 <label for="safety-7-2">Midrise (5 to 15 storeys)</label>
                             </div>
                             <div>
@@ -222,7 +223,7 @@
                         </div>
                         <div class="section-safety-8-buttons">
                             <div>
-                                <input type="radio" id="safety-8-1" name="property-safety-8">
+                                <input type="radio" id="safety-8-1" name="property-safety-8" checked>
                                 <label for="safety-8-1">Insured</label>
                             </div>
                             <div>
@@ -242,7 +243,7 @@
                         </div>
                         <div class="section-safety-9-buttons">
                             <div>
-                                <input type="radio" id="safety-9-1" name="property-safety-9">
+                                <input type="radio" id="safety-9-1" name="property-safety-9" checked>
                                 <label for="safety-9-1">It withstood the disaster and did not need to undergo repairs</label>
                             </div>
                             <div>
@@ -262,7 +263,7 @@
                         </div>
                         <div class="section-safety-10-buttons">
                             <div>
-                                <input type="radio" id="safety-10-1" name="property-safety-10">
+                                <input type="radio" id="safety-10-1" name="property-safety-10" checked>
                                 <label for="safety-10-1">Fully-functional</label>
                             </div>
                             <div>
@@ -282,7 +283,7 @@
                         </div>
                         <div class="section-safety-11-buttons">
                             <div>
-                                <input type="radio" id="safety-11-1" name="property-safety-11">
+                                <input type="radio" id="safety-11-1" name="property-safety-11" checked>
                                 <label for="safety-11-1">Fully-functional</label>
                             </div>
                             <div>
@@ -302,7 +303,7 @@
                                 <label for="safety-12-1">Nearby</label>
                             </div>
                             <div>
-                                <input type="radio" id="safety-12-2" name="property-safety-12">
+                                <input type="radio" id="safety-12-2" name="property-safety-12" checked>
                                 <label for="safety-12-2">Not too far</label>
                             </div>
                             <div>
@@ -318,7 +319,7 @@
                         </div>
                         <div class="section-safety-13-buttons">
                             <div>
-                                <input type="radio" id="safety-13-1" name="property-safety-13">
+                                <input type="radio" id="safety-13-1" name="property-safety-13" checked>
                                 <label for="safety-13-1">Nearby</label>
                             </div>
                             <div>
@@ -344,11 +345,11 @@
                     </div>
                     <div class="section-convenience-chekboxes">
                         <div>
-                            <input type="checkbox" id="convenience-1" name="convenience">
+                            <input type="checkbox" id="convenience-1" name="convenience" checked>
                             <label for="convenience-1">Hospital</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-2" name="convenience">
+                            <input type="checkbox" id="convenience-2" name="convenience" checked>
                             <label for="convenience-2">Police Station</label>
                         </div>
                         <div>
@@ -356,7 +357,7 @@
                             <label for="convenience-3">Fire Station</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-4" name="convenience">
+                            <input type="checkbox" id="convenience-4" name="convenience" checked>
                             <label for="convenience-4">School</label>
                         </div>
                         <div>
@@ -364,7 +365,7 @@
                             <label for="convenience-5">Workplace</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-6" name="convenience">
+                            <input type="checkbox" id="convenience-6" name="convenience" checked>
                             <label for="convenience-6">Grocery or Market</label>
                         </div>
                         <div>
@@ -372,7 +373,7 @@
                             <label for="convenience-7">Laundromat</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-8" name="convenience">
+                            <input type="checkbox" id="convenience-8" name="convenience" checked>
                             <label for="convenience-8">Water Filling Station</label>
                         </div>
                         <div>
@@ -397,6 +398,7 @@
                         </div>
                         <div>
                             <input type="checkbox" id="convenience-14" name="convenience">
+                            <input type="text" id="convenience-14" name="convenience" class="convenience-text-field">
                             <label for="convenience-14">Other</label>
                         </div>
                     </div>
@@ -404,5 +406,27 @@
         </div>
     </form>
 
+    <div class="new-checklist-score">
+        <div class="new-checklist-buttons">
+            <div>
+                <button class="new-checklist-save-button">
+                    Save
+                </button>
+            </div>
+            <div>
+                <button class="new-checklist-cancel-button" onclick="window.location='{% url 'checklist' %}'">
+                    Cancel
+                </button>
+            </div>
+            <div>
+                <button class="new-checklist-delete-button">
+                    Delete
+                </button>
+            </div>
+        </div>
+        <div class="new-checklist-score-breakdown">
+            <img src="{% static 'score-cheat.png' %}">
+        </div>        
+    </div>
 </div>
 {% endblock %}

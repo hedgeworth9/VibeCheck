@@ -1,5 +1,50 @@
-{% extends 'main/base.html' %}
+{% extends "main/base.html" %}
+{% load widget_tweaks %}
 
-{% block body %}
+{% block body %}      
 
+<!--Register--> 
+<div class="signup">
+	<div class="signup-form">
+		<div class="signup-header">Sign In</div>
+		<div class="signup-form-inputs">
+		<form method="POST" class="signup-form-element">
+			{% csrf_token %}
+			<div class="signup-email">
+				{{ register_form.email.errors }}
+				<div class="signup-email-label">
+				{{ register_form.email.label_tag }}
+				</div>
+				{{ register_form.email|add_class:"signup-input-field" }}
+			</div>
+			<div class="signup-password">
+				{{ register_form.password1.errors }}
+				<div class="signup-password-label">
+				{{ register_form.password1.label_tag }}
+				</div>
+				{{ register_form.password1|add_class:"signup-input-field" }}
+			</div>
+		</form>
+        <div class="signin-remember-me">
+            <div class="signin-remember-me-box">
+                <input type="checkbox" checked>
+            </div>
+            <div class="signin-remember-me-text">
+                Remember me
+            </div>
+        </div>
+		</div>
+		<p class="signup-form-button-wrap">
+			<button class="signup-form-button" onclick="window.location='{% url 'checklist' %}'">
+				<div class="signup-form-button-text">Log In</div>
+			</button>
+		</p>
+		<div class="signup-form-signin-text">
+			Don't have an account yet? <a href="{% url 'signin' %}">Sign up.</a>
+		</div>
+        <div class="signin-forgot-password">
+            Forgot password?
+        </div>
+	</div>
+</div>
 {% endblock %}

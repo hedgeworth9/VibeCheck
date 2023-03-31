@@ -1,0 +1,31 @@
+{% extends 'main/base-signed-in.html' %}
+{% load static %}
+
+{% block body %}
+<div class="profile">
+    <div class="my-profile">
+        My Profile
+    </div>
+    <div class="profile-image">
+        <img src="{% static 'profile-image.png' %}">
+    </div>
+    <div class="profile-username-label">
+        Username
+    </div>
+    <div class="profile-username">
+        Maxine Sophiya Sandico
+    </div>
+    <div class="profile-email-label">
+        Email
+    </div>
+    <div class="profile-email">
+        maxine.sandico@obf.ateneo.edu
+    </div>
+    <button class="profile-edit-profile">
+        Edit Profile
+    </button>
+    <button class="profile-change-password">
+        Change Password
+    </button>
+</div>
+{% endblock %}

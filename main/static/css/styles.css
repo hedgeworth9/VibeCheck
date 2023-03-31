@@ -1,3 +1,119 @@
+/* General */
+button {
+    cursor: pointer;
+}
+
+/* Profile */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10%;
+
+    justify-content: space-between;
+    height: 110vh;
+}
+
+.profile-edit-profile, .profile-change-password {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #4CAB3C;
+    border-radius: 5px;
+    border: none;
+
+    width: 28vh;
+    height: 8vh;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    
+    
+    
+    color: #FFFFFF;
+    
+}
+
+.profile-username, .profile-email {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 39px;
+    /* identical to box height */
+    
+    letter-spacing: -0.02em;
+    
+    color: #505358;
+    
+}
+
+.profile-username-label, .profile-email-label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.02em;
+    
+    color: #C4C4C4;
+    
+}
+
+.profile-image {
+    object-fit: contain;
+}
+
+.my-profile {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: -0.02em;
+    
+    color: #505358;
+}
+
+/* Sign In */
+.signin-forgot-password {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140.62%;
+    /* or 22px */
+    
+    text-align: center;
+    
+    color: #505358;
+}
+
+.signin-remember-me {
+    display: flex;
+}
+
+.signin-remember-me-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140.62%;
+    /* or 22px */
+    
+    
+    color: #4CAB3C;
+    
+}
+
 /* Safety Portal */
 .safety-portal {
     display: flex;
@@ -110,6 +226,11 @@
 } 
 
 /* Property Create View */
+.convenience-text-field {
+    background: #FEE08B;
+    border: 1px solid #505358;
+    border-radius: 3px;
+}
 .new-checklist {
     display: flex;
     padding-top: 5%;
@@ -209,6 +330,18 @@
     flex: 1;
 }
 
+.new-checklist-section-2-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #EDEFF2;
+    border-radius: 12px;
+    border: none;
+    margin: 2%;
+    height: 25vh;
+    width: 70vh;
+}
 .new-checklist-form-element {
     display: flex;
     flex-direction: column;
@@ -229,6 +362,17 @@
     gap: 1%;
 }
 
+.section-price {
+    background: #EA5838;
+}
+
+.section-safety {
+    background: #4CAB3C;
+}
+
+.section-convenience {
+    background: #FFC724;
+}
 .section-price-header, .section-safety-header, .section-convenience-header {
     font-family: 'Inter';
     font-style: normal;
@@ -238,8 +382,8 @@
     /* identical to box height */
     
     letter-spacing: -0.02em;
-    
-    color: #505358;
+    color: white;
+    /* color: #505358; */
     
 }
 
@@ -259,7 +403,15 @@
     line-height: 140.62%;
     /* identical to box height, or 31px */
     
-    
+    color: white;
+    /* color: #505358; */
+}
+
+.new-checklist-section-3 {
+    color: white;
+}
+
+.section-convenience, .section-convenience-header, .section-convenience-question {
     color: #505358;
 }
 
@@ -280,6 +432,15 @@
     margin: 2%;
     height: 5vh;
     width: 70vh;
+}
+
+.property-input-field-image {
+    background: #EDEFF2;
+    border-radius: 12px;
+    border: none;
+    margin: 2%;
+    /* height: 25vh;
+    width: 70vh; */
 }
 
 .property-input-field::placeholder {
@@ -467,6 +628,7 @@
 
 .signup-input-field {
     background: #EDEFF2;
+    border: none;
     border-radius: 12px;
     border-color: #EDEFF2;
 
