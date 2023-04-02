@@ -1,3 +1,18 @@
+function hide(obj)
+    {
+    var inner = obj.parentElement;
+    console.log(inner);
+    inner.style.display = "none";
+
+    }
+
+function show(obj)
+{
+    var inner = obj.nextSibling.nextSibling;
+    console.log(inner);
+    inner.style.display = "flex";
+}
+
 var priceScore, safetyScore, convenienceScore, totalScore;
 var coll;
 

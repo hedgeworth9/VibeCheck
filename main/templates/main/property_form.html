@@ -80,6 +80,39 @@
                     <div class="section-safety-1-details">
                         <div class="section-safety-question">
                             2. When was the building constructed?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Building Age
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Older buildings are more susceptible to damage and structural collapse
+                                            caused by earthquakes. Asking about the building's age also give you an
+                                            idea of which earthquakes and how many earthquakes the building has 
+                                            already survived in the past.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Ask the landlord or real estate agent for the exact date when the 
+                                            building was constructed.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-1-buttons">
                             <div>
@@ -100,6 +133,46 @@
                     <div class="section-safety-2-details">
                         <div class="section-safety-question">
                             3. Does the building adhere to building codes?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Adherence to Building Codes
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Both national and local building codes provide minimum standards for
+                                            the sake of protecting public health, safety, and general welfare in relation
+                                            to the construction and occupancy of buildings. Asking for proof from the
+                                            landlord or real estate agent that the building adheres to building codes
+                                            gives you assurance that you are protected by the law in the case of 
+                                            structural collapse, fires, and general deterioation.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Ask to see the building permit as well as the establishment's license to operate
+                                            to verify whether they are running a legal real estate operation. If you wish 
+                                            to be extra sure, you may opt to verify these documents at your local
+                                            government unit (LGU). Concerned officers include the Department of the Building
+                                            Official (DBO) and the Business Permit and Licensing Department (BPLD), respectively.
+                                            You may normally find these departments located in the city hall or town hall. Note
+                                            that verification for this is ony necessary if the estabilshment seems suspicious.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-2-buttons">
                             <div>
@@ -120,6 +193,42 @@
                     <div class="section-safety-3-details">
                         <div class="section-safety-question">
                             4. Is the building on a fault line (or near one)?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Proximity to Fault Lines
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            There are fault lines all over the Philippines, so in a way all properties are near
+                                            a fault line one way or the other. Hence, all people should be prepared for 
+                                            earthquakes. However, there are certain areas that are extremely close to fault lines.
+                                            It is best to avoid living too near them altogether. The government mandates a buffer
+                                            zone of at least 5 meters from each side of a fault. Anything less is illegal.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            There are free tools online to check which areas in the country are near faultlines
+                                            such as <a href="#">FaultFinder</a> by PHIVOLCS and <a href="#">HazardHunterPH</a>
+                                            which are free government websites you can use for hazard assessment. If in doubt,
+                                            consult a professional or contact the authorities, as necessary.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-3-buttons">
                             <div>
@@ -140,6 +249,44 @@
                     <div class="section-safety-4-details">
                         <div class="section-safety-question">
                             5. Has the building been retrofitted?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Retrofitting
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Earthquake retrofitting is the act of adding a component or accessory to a 
+                                            structure for reinforcement. As buildings get older, they go through inevitable wear
+                                            and tear. Hence, buildings must be reinforced over time. Sometimes, building codes
+                                            may even be revised to require retrofitting in certain areas that need to do so more
+                                            urgently. It is important to check if the building has undergone retrofitting, as
+                                            necessary.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Ask to see which specific areas or features of the building in partiular were retrofitted.
+                                            If the landlord or real estate agent is not able to provide a clear answer or you are
+                                            unsatisfied with their response, it may be best to visit the Department of the Building
+                                            Official for consultation or a professional structural engineer, as necessary. Note that
+                                            verification for this is only necessary the establishment seems suspicious.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-4-buttons">
                             <div>
@@ -160,6 +307,40 @@
                     <div class="section-safety-5-details">
                         <div class="section-safety-question">
                             6. Are there foundation issues?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Foundation Issues
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            If the building is on a mountain, hill, or other type of sloping land area, there may be
+                                            foundation issues. In such a case, ask the landlord or agent what was done to fix the issues.
+                                            Areas with inclined topography are also more prone to landslides.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            To check which areas in the country are in danger of landslides, free tools are available
+                                            online such as <a href="#">HazardHunterPH</a>, a government website you can use for hazard
+                                            assessment. If in doubt, consult a professional or contact the authorities only as
+                                            necessary.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-5-buttons">
                             <div>
@@ -180,6 +361,40 @@
                     <div class="section-safety-6-details">
                         <div class="section-safety-question">
                             7. What kind of soil is underneath the building?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Soil
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            If the type of soil beneath a building is loosely-packed, it becomes more prone to
+                                            liquefaction (the process that causes soil to behave more like a liquid than a solid
+                                            during an earthquake). Liquefaction cause objects and structures on the ground to lean, tip
+                                            over, or even sink.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            If in doubt, a professional would know better, so it would be wise to consult one, to contact 
+                                            someone from PHIVOLCS or visit the Department of the Building Official, as necessary for 
+                                            more information.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-6-buttons">
                             <div>
@@ -200,6 +415,40 @@
                     <div class="section-safety-7-details">
                         <div class="section-safety-question">
                             8. How tall is the building?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Building Height
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Taller buildings have the tendency to keep shaking for longer periods of time compared to
+                                            shorter houses. Though there is technology available now to design buildings that can
+                                            withstand earthquakes better, it would still be wiser to purcahse units in shorter 
+                                            buildings found in earthquake-prone regions.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Ask the landlord or agent how many storeys the building has or ask for the exact height
+                                            in a standard unit of measurement. Highrises are buildings with 1-4 storeys and 5 to
+                                            15 storeys, respectively.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-7-buttons">
                             <div>
@@ -220,6 +469,38 @@
                     <div class="section-safety-8-details">
                         <div class="section-safety-question">
                             9. Is the building insured for earthquake damage and other types of disasters?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Insurance
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            It is wise to ask if the property is covered by earthquake insurance since it differs
+                                            from blanket homeowners insurance. It would also be helpful to inquire about 
+                                            typhoon insurance, and fire insurance, considering the country's tropical climate.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Ask which company provides the insurance and ask to see a copy. Afterwards, verify if
+                                            the insurance company exists and if it is reputable by checking sources online.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-8-buttons">
                             <div>
@@ -240,6 +521,41 @@
                     <div class="section-safety-9-details">
                         <div class="section-safety-question">
                             10. Has the building been affected by a previous disaster?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    History of Previous Disasters
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            If the building has suffered damage from previous disasters such as
+                                            earthquakes, fires, and typhoons, it may be more vulnerable in the 
+                                            event of a new earthquake if necessary repairs were not administered.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Ask to see which specific areas or features of the building in particular
+                                            were retrofitted. If they are not able to provide a clear answer, it may
+                                            be best to visit the Department of the Building Official for consultation
+                                            or a professional structural engineer, as necessary. Note that verification
+                                            for this is only necessary if the establishment seems suspcious.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-9-buttons">
                             <div>
@@ -260,6 +576,40 @@
                     <div class="section-safety-10-details">
                         <div class="section-safety-question">
                             11. Are there functional fire exits?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Fire Exits
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            You may be hindered from evacuating in the case of an earthquake if the
+                                            fire exits are faulty, especially if you live on higher storeys. 
+                                            Remember that you cannot use elevators during earthquakes. Therefore, you
+                                            must check if the fire exit doors and stairwells are unblocked/passable
+                                            and made of fire-resistant materials.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            While the landlord or agent is touring you around the property, request a
+                                            walkthrough of the fire exits and ask what the possible escape routes are.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-10-buttons">
                             <div>
@@ -280,6 +630,41 @@
                     <div class="section-safety-11-details">
                         <div class="section-safety-question">
                             12. Where is the gas shut-off valve?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Gas Shut Off Value
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Earthquakes may trigger fires and explosions, which is why you need to shut
+                                            off the gas in your property or unit in the event of an earthquake. Some
+                                            units have automatic shut off valves. Ask the landlord or agent where it is
+                                            and how to operate it.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            One cannot immediately tell at a glance if the valve is broken, but a good
+                                            indicator of quality maintenance is if the valves are replaced often (since 
+                                            they are subect to wear and tear). Ask when the last time the valves were replaced
+                                            or how often routine maintenance is conducted.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-11-buttons">
                             <div>
@@ -296,6 +681,39 @@
                     <div class="section-safety-12-details">
                         <div class="section-safety-question">
                             13. Where is the nearest evacuation zone in case of an emergency?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Nearest Evacuation Zone
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            In the event of an earthquake or other disaster, you need to know the route
+                                            to the nearest evacuation zone so that you can stay our of harm's way while
+                                            awaiting help from the proper authorities.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Ask the landlord or real estate agent for the locations of the nearest evacuation
+                                            zones. Afterwards, verify the locations by visiting them or checking them on a
+                                            map.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-12-buttons">
                             <div>
@@ -316,6 +734,37 @@
                     <div class="section-safety-13-details">
                         <div class="section-safety-question">
                             14. Are there hospitals, police stations, and fire stations nearby?*
+                            <button class="property-form-info-button" onclick="show(this)">
+                                <img src="{% static 'info-button.png' %}">
+                            </button>
+                            <div class="section-modal" id="section-safety-2-modal">
+                                <div class="section-modal-header">
+                                    Proximity to Essential Institutions
+                                </div>
+                                <div class="section-modal-sides">
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            Why ask?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            For general safety and security purposes, it is good to know how far these
+                                            essential institutions are located.
+                                        </div>
+                                    </div>
+                                    <div class="section-modal-side">
+                                        <div class="section-modal-side-header">
+                                            How to verify?
+                                        </div>
+                                        <div class="section-modal-text">
+                                            Ask the landlord or agent for the locations of th nearest essential institutions.
+                                            Afterwards, verify the locations by visiting them or checking them on a map.
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="section-modal-button" onclick="hide(this)">
+                                    Okay, got it!
+                                </button>
+                            </div>
                         </div>
                         <div class="section-safety-13-buttons">
                             <div>

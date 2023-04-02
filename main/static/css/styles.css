@@ -130,6 +130,7 @@ button {
 }
 
 /* Safety Portal */
+
 .safety-portal {
     display: flex;
     flex-direction: column;
@@ -241,11 +242,118 @@ button {
 } 
 
 /* Property Create View */
+
+.section-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -40%);
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+
+    width: 150vh;
+    height: 70vh;  
+}
+
+.section-modal-button {
+    border: 3px solid #4CAB3C;
+    border-radius: 5px;
+    background: none;
+    /* margin: 5%; */
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21px;
+
+    color: #4CAB3C;
+
+    width: 50vh;
+    height: 10vh;
+}
+
+.section-modal-sides {
+    display: flex;
+    justify-content: space-between;
+    margin: 3%;
+}
+
+.section-modal-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 50%;
+}
+
+.section-modal-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140.62%;
+    /* or 28px */
+    
+    
+    color: #505358;
+
+    margin: 1%;
+}
+
+.section-modal-header {
+    margin: 2%;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 140.62%;
+    /* or 56px */
+    
+    text-align: center;
+    
+    color: #4CAB3C;
+}
+
+.section-modal-side-header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 140.62%;
+    /* or 51px */
+    
+    text-align: center;
+    
+    color: #505358;
+    
+}
+
+.property-form-info-button {
+    background: none;
+    border: none;
+}
+
+.property-form-info-button img {
+    object-fit: contain;
+    width: 70%;
+}
+
 .convenience-text-field {
     background: #FEE08B;
     border: 1px solid #505358;
     border-radius: 3px;
 }
+
 .new-checklist {
     display: flex;
     padding-top: 5%;
