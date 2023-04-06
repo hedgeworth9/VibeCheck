@@ -79,16 +79,16 @@ WSGI_APPLICATION = 'VibeCheck.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#   'default': {
-#     'ENGINE': 'django.db.backends.postgresql',
-#     'NAME': 'neondb',
-#     'USER': 'marielle.montero',
-#     'PASSWORD': 'eFc8N6RQLHWb',
-#     'HOST': 'ep-solitary-sound-638473.ap-southeast-1.aws.neon.tech',
-#     'PORT': '5432',
-#   }
-# }
+DATABASES = {
+  'default': {
+    'ENGINE': 'django.db.backends.postgresql',
+    'NAME': 'neondb',
+    'USER': 'marielle.montero',
+    'PASSWORD': 'eFc8N6RQLHWb',
+    'HOST': 'ep-solitary-sound-638473.ap-southeast-1.aws.neon.tech',
+    'PORT': '5432',
+  }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

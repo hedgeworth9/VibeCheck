@@ -4,6 +4,53 @@
 
 {% block body %}
 <script src = "{% static 'js/checklist_script.js' %}"></script>
+<script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+    var totalScore = 0;
+    $(document).ready(function(){
+        $("input[type='radio']").click(function(){
+            var radioValue = $("input[class='property-form-radio']:checked").val();
+            if(radioValue){
+                // alert("Your are a - " + radioValue);
+            }
+            totalScore += parseFloat(radioValue);
+        });
+
+        $("input[type='radio']").click(function() {
+            var the_value;
+            //the_value = jQuery('input:radio:checked').val();
+            //the_value = jQuery('input[name=macro]:radio:checked').val();
+            the_value = getChecklistItems();
+            // alert('value ' + the_value);
+            $("#total-score").html(the_value);
+        });
+
+        function getChecklistItems() {
+            var result =
+                $("input:radio:checked").get();
+
+            var columns = $.map(result, function(element) {
+                return $(element).attr("id");
+            });
+
+
+            totalScore = 0;
+            for (element of columns) {
+                value = parseFloat(document.getElementById(element).value);
+                console.log(value);
+                value = isNaN(value) ? 0 : value;
+                value = parseFloat(value);
+                // console.log(value);
+                totalScore += value;
+            }
+            
+            
+            return totalScore;
+        }
+            });
+</script>
+
 <div class="new-checklist">
     {% csrf_token %}
     <!-- <form method="POST" class="new-checklist-form-element"></form> -->
@@ -51,6 +98,7 @@
                 </div>
             </div>
         </div>
+
         <div class="new-checklist-section-3">
             <div class="section-price" id="section-price">
                 <div class="section-price-header">
@@ -61,14 +109,17 @@
                         1. Is it within your desired price range?*
                     </div>
                     <div class="section-price-buttons">
-                        <div>
+                        {% for choice in form.price %}
+                            <div>{{ choice }}</div>
+                        {% endfor %}
+                        <!-- <div>
                             <input type="radio" id="budget-1" name="property-price">
                             <label for="budget-1">Within budget</label>
                         </div>
                         <div>
                             <input type="radio" id="budget-2" name="property-price" checked>
                             <label for="budget-2">Overbudget</label>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -115,18 +166,9 @@
                             </div>
                         </div>
                         <div class="section-safety-1-buttons">
-                            <div>
-                                <input type="radio" id="safety-1-1" name="property-safety-1">
-                                <label for="safety-1-1">Less than 5 years</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-1-2" name="property-safety-1">
-                                <label for="safety-1-2">Less than 10 years</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-1-3" name="property-safety-1" checked>
-                                <label for="safety-1-3">More than 10 years</label>
-                            </div>
+                            {% for choice in form.building_age %}
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -175,18 +217,9 @@
                             </div>
                         </div>
                         <div class="section-safety-2-buttons">
-                            <div>
-                                <input type="radio" id="safety-2-1" name="property-safety-2" checked>
-                                <label for="safety-2-1">Yes</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-2-2" name="property-safety-2">
-                                <label for="safety-2-2">Unsure</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-2-3" name="property-safety-2">
-                                <label for="safety-2-3">No</label>
-                            </div>
+                            {% for choice in form.building_codes %}
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -231,18 +264,9 @@
                             </div>
                         </div>
                         <div class="section-safety-3-buttons">
-                            <div>
-                                <input type="radio" id="safety-3-1" name="property-safety-3" checked>
-                                <label for="safety-3-1">No</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-3-2" name="property-safety-3">
-                                <label for="safety-3-2">Less than 1 kilometer away from a fault line</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-3-3" name="property-safety-3">
-                                <label for="safety-3-3">Less than 5 meters away from or directly on top of a fault line</label>
-                            </div>
+                            {% for choice in form.fault_line %}
+                                <div>{{ choice }}</div>
+                            {% endfor %} 
                         </div>
                     </div>
 
@@ -289,18 +313,9 @@
                             </div>
                         </div>
                         <div class="section-safety-4-buttons">
-                            <div>
-                                <input type="radio" id="safety-4-1" name="property-safety-4" checked>
-                                <label for="safety-4-1">Yes/Doesn't need retrofitting at present</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-4-2" name="property-safety-4">
-                                <label for="safety-4-2">Unsure</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-4-3" name="property-safety-4">
-                                <label for="safety-4-3">Needs to undergo retrofitting</label>
-                            </div>
+                            {% for choice in form.retrofitted %}
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
                     
@@ -343,18 +358,9 @@
                             </div>
                         </div>
                         <div class="section-safety-5-buttons">
-                            <div>
-                                <input type="radio" id="safety-5-1" name="property-safety-5" checked>
-                                <label for="safety-5-1">No issues/Resolved issues</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-5-2" name="property-safety-5">
-                                <label for="safety-5-2">Issues present, unsure if resolved</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-5-3" name="property-safety-5">
-                                <label for="safety-5-3">Issues present and unresolved</label>
-                            </div>
+                            {% for choice in form.foundation_issues %}
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -397,18 +403,9 @@
                             </div>
                         </div>
                         <div class="section-safety-6-buttons">
-                            <div>
-                                <input type="radio" id="safety-6-1" name="property-safety-6" checked>
-                                <label for="safety-6-1">Firm soil</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-6-2" name="property-safety-6">
-                                <label for="safety-6-2">Unsure</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-6-3" name="property-safety-6">
-                                <label for="safety-6-3">Loose soil</label>
-                            </div>
+                            {% for choice in form.soil %}
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -451,18 +448,9 @@
                             </div>
                         </div>
                         <div class="section-safety-7-buttons">
-                            <div>
-                                <input type="radio" id="safety-7-1" name="property-safety-7">
-                                <label for="safety-7-1">Lowrise (1 to 4 storeys)</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-7-2" name="property-safety-7" checked>
-                                <label for="safety-7-2">Midrise (5 to 15 storeys)</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-7-3" name="property-safety-7">
-                                <label for="safety-7-3">Highrise (at least 16 storeys or 48 meters high)</label>
-                            </div>
+                            {% for choice in form.building_height %}
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -503,18 +491,9 @@
                             </div>
                         </div>
                         <div class="section-safety-8-buttons">
-                            <div>
-                                <input type="radio" id="safety-8-1" name="property-safety-8" checked>
-                                <label for="safety-8-1">Insured</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-8-2" name="property-safety-8">
-                                <label for="safety-8-2">Incomplete insurance (e.g. has fire insurance but no earthquake insurance)</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-8-3" name="property-safety-8">
-                                <label for="safety-8-3">No</label>
-                            </div>
+                            {% for choice in form.building_insurance %} 
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -558,18 +537,9 @@
                             </div>
                         </div>
                         <div class="section-safety-9-buttons">
-                            <div>
-                                <input type="radio" id="safety-9-1" name="property-safety-9" checked>
-                                <label for="safety-9-1">It withstood the disaster and did not need to undergo repairs</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-9-2" name="property-safety-9">
-                                <label for="safety-9-2">The building withstood some minor damage but it has been properly repaired since then</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-9-3" name="property-safety-9">
-                                <label for="safety-9-3">There was grave damage and it has not been properly repaired</label>
-                            </div>
+                            {% for choice in form.disaster_history %}
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -612,18 +582,9 @@
                             </div>
                         </div>
                         <div class="section-safety-10-buttons">
-                            <div>
-                                <input type="radio" id="safety-10-1" name="property-safety-10" checked>
-                                <label for="safety-10-1">Fully-functional</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-10-2" name="property-safety-10">
-                                <label for="safety-10-2">Signs of aging and needs upkeep but not worrisome</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-10-3" name="property-safety-10">
-                                <label for="safety-10-3">Completely impassable, worrisome decline</label>
-                            </div>
+                            {% for choice in form.fire_exits %}
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -667,14 +628,9 @@
                             </div>
                         </div>
                         <div class="section-safety-11-buttons">
-                            <div>
-                                <input type="radio" id="safety-11-1" name="property-safety-11" checked>
-                                <label for="safety-11-1">Fully-functional</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-11-2" name="property-safety-11">
-                                <label for="safety-11-2">Faulty</label>
-                            </div>
+                           {% for choice in form.gas_valve %}
+                            <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -716,18 +672,9 @@
                             </div>
                         </div>
                         <div class="section-safety-12-buttons">
-                            <div>
-                                <input type="radio" id="safety-12-1" name="property-safety-12">
-                                <label for="safety-12-1">Nearby</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-12-2" name="property-safety-12" checked>
-                                <label for="safety-12-2">Not too far</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-12-3" name="property-safety-12">
-                                <label for="safety-12-3">Far away</label>
-                            </div>
+                            {% for choice in form.evacuation_zone %}
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
 
@@ -767,18 +714,9 @@
                             </div>
                         </div>
                         <div class="section-safety-13-buttons">
-                            <div>
-                                <input type="radio" id="safety-13-1" name="property-safety-13" checked>
-                                <label for="safety-13-1">Nearby</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-13-2" name="property-safety-13">
-                                <label for="safety-13-2">Not too far</label>
-                            </div>
-                            <div>
-                                <input type="radio" id="safety-13-3" name="property-safety-13">
-                                <label for="safety-13-3">Far away</label>
-                            </div>
+                            {% for choice in form.essential_institutions %}
+                                <div>{{ choice }}</div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -856,6 +794,9 @@
     </form>
 
     <div class="new-checklist-score">
+        <div class="score-test">
+            <h1 id="total-score">test</h1>
+        </div>
         <div class="new-checklist-buttons">
             <div>
                 <button class="new-checklist-save-button" onclick="window.location='{% url 'checklist-filled' %}'">
