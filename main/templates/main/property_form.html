@@ -7,46 +7,72 @@
 <script src ="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script type="text/javascript">
-    var totalScore = 0;
+    var priceScore = 0;
+    var safetyScore = 0;
+    var convenienceScore = 0;
     $(document).ready(function(){
-        $("input[type='radio']").click(function(){
-            var radioValue = $("input[class='property-form-radio']:checked").val();
-            if(radioValue){
-                // alert("Your are a - " + radioValue);
-            }
-            totalScore += parseFloat(radioValue);
+        // $("input[type='radio']").click(function(){
+        //     var radioValue = $("input[class='property-form-radio']:checked").val();
+        //     if(radioValue){
+        //         // alert("Your are a - " + radioValue);
+        //     }
+        //     totalScore += parseFloat(radioValue);
+        // });
+        function scoreUpdate() {
+            let scores = getChecklistItems();
+            //the_value = jQuery('input:radio:checked').val();
+            //the_value = jQuery('input[name=macro]:radio:checked').val();
+            var priceScore = scores[0];
+            var safetyScore = scores[1];
+            var convenienceScore = scores[2];
+            convenienceScore = Math.min(scores[2], 10);
+            var pricePercent = (priceScore / 1) * 100;
+            var safetyPercent = Math.round((safetyScore / 13) * 100);
+            var conveniencePercent = Math.round((convenienceScore / 10) * 100);
+            var totalScore = (pricePercent * 0.4) + (safetyPercent * 0.4) + (conveniencePercent * 0.2); 
+            totalScore = totalScore.toFixed(1);
+
+            $("#price-percent").html(pricePercent + "%")
+            $("#safety-percent").html(safetyPercent + "%");
+            $("#convenience-percent").html(conveniencePercent + "%");
+            $("#price-score").val(priceScore);
+            $("#safety-score").val(safetyScore);
+            $("#convenience-score").val(convenienceScore);
+            $("#total-score").html(totalScore + "%");
+        }
+
+        $("input[type='checkbox']").click(function() {
+            scoreUpdate();
         });
 
         $("input[type='radio']").click(function() {
-            var the_value;
-            //the_value = jQuery('input:radio:checked').val();
-            //the_value = jQuery('input[name=macro]:radio:checked').val();
-            the_value = getChecklistItems();
-            // alert('value ' + the_value);
-            $("#total-score").html(the_value);
+            scoreUpdate();
         });
 
         function getChecklistItems() {
-            var result =
-                $("input:radio:checked").get();
+            var result = $("input:radio:checked").get();
 
             var columns = $.map(result, function(element) {
                 return $(element).attr("id");
-            });
+            });                                                                                              
 
 
-            totalScore = 0;
+            priceScore = 0;
+            safetyScore = 0;
+            convenienceScore = 0;
             for (element of columns) {
                 value = parseFloat(document.getElementById(element).value);
-                console.log(value);
                 value = isNaN(value) ? 0 : value;
                 value = parseFloat(value);
-                // console.log(value);
-                totalScore += value;
+                if(document.getElementById(element).className == ("property-form-price-radio")) {
+                    priceScore += value;
+                } else if(document.getElementById(element).className == ("property-form-safety-radio")) {
+                    safetyScore += value;
+                }
             }
             
-            
-            return totalScore;
+            convenienceScore = $("input:checkbox:checked").length;
+            return [priceScore, safetyScore, convenienceScore];
         }
             });
 </script>
@@ -732,11 +758,11 @@
                     </div>
                     <div class="section-convenience-chekboxes">
                         <div>
-                            <input type="checkbox" id="convenience-1" name="convenience" checked>
+                            <input type="checkbox" id="convenience-1" name="convenience">
                             <label for="convenience-1">Hospital</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-2" name="convenience" checked>
+                            <input type="checkbox" id="convenience-2" name="convenience">
                             <label for="convenience-2">Police Station</label>
                         </div>
                         <div>
@@ -744,7 +770,7 @@
                             <label for="convenience-3">Fire Station</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-4" name="convenience" checked>
+                            <input type="checkbox" id="convenience-4" name="convenience">
                             <label for="convenience-4">School</label>
                         </div>
                         <div>
@@ -752,7 +778,7 @@
                             <label for="convenience-5">Workplace</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-6" name="convenience" checked>
+                            <input type="checkbox" id="convenience-6" name="convenience">
                             <label for="convenience-6">Grocery or Market</label>
                         </div>
                         <div>
@@ -760,7 +786,7 @@
                             <label for="convenience-7">Laundromat</label>
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-8" name="convenience" checked>
+                            <input type="checkbox" id="convenience-8" name="convenience">
                             <label for="convenience-8">Water Filling Station</label>
                         </div>
                         <div>
@@ -794,8 +820,30 @@
     </form>
 
     <div class="new-checklist-score">
-        <div class="score-test">
-            <h1 id="total-score">test</h1>
+        <div class="score-header-group">
+            <p id="score-header">Score</p>
+            <button id="score-info-button">
+                <img src="{% static 'info-button.png' %}">
+            </button>
+        </div>
+        <div class="score-bar-group">
+            <label for="price-score" class="score-label">Price</label>
+            <progress id="price-score" class="score-bar" value="0" max="1"></progress>
+            <p id="price-percent" class="score-percent">0%</p>
+        </div>
+        <div class="score-bar-group">
+            <label for="safety-score" class="score-label">Safety</label>
+            <progress id="safety-score" class="score-bar" value="0" max="13"></progress>
+            <p id="safety-percent" class="score-percent">0%</p>
+        </div>
+        <div class="score-bar-group">
+            <label for="convenience-score" class="score-label">Convenience</label>
+            <progress id="convenience-score" class="score-bar" value="0" max="10"></progress>
+            <p id="convenience-percent" class="score-percent">0%</p>
+        </div>
+        <div class="total-score-group">
+            <p id="total-score-header">TOTAL</p>
+            <p id="total-score">0%</p>
         </div>
         <div class="new-checklist-buttons">
             <div>
@@ -813,10 +861,7 @@
                     Delete
                 </button>
             </div>
-        </div>
-        <div class="new-checklist-score-breakdown">
-            <img src="{% static 'score-cheat.png' %}">
-        </div>        
+        </div>      
     </div>
 </div>
 {% endblock %}

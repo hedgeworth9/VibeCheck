@@ -242,6 +242,129 @@ button {
 } 
 
 /* Property Create View */
+.total-score-group {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+
+#total-score {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 140.62%;
+    /* or 45px */
+    
+    display: flex;
+    align-items: center;
+    
+    color: #EA5838;
+    
+}
+
+#total-score-header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 140.62%;
+    /* or 45px */
+    
+    display: flex;
+    align-items: center;
+    
+    color: #505358;
+     
+}
+
+.score-header-group {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+}
+
+#score-header {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+    line-height: 44px;
+    /* identical to box height */
+    
+    letter-spacing: -0.02em;
+    
+    color: #505358;
+    
+}
+
+#score-info-button {
+    background: none;
+    border: none;
+}
+
+.score-bar-group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 40%;
+}
+
+#safety-score {
+    color: #4CAB3C; 
+}
+
+#price-score {
+    color: #EA5838;
+}
+
+#convenience-score {
+    color: #FFC724; 
+}
+
+#price-percent {
+    color: #EA5838;
+}
+
+#safety-percent {
+    color: #4CAB3C; 
+}
+
+#convenience-percent {
+    color: #FFC724; 
+}
+
+.score-percent {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 140.62%; 
+}
+
+.score-bar {
+    background: #505358;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    height: 3vh;
+    width: 30vh;
+}
+
+.score-label {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 140.62%;
+    /* or 34px */
+    
+    display: flex;
+    align-items: center;
+    
+    color: #505358;
+    
+}
 
 .section-modal {
     position: fixed;
