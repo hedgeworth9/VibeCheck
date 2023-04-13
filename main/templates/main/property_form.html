@@ -39,6 +39,7 @@
             $("#safety-score").val(safetyScore);
             $("#convenience-score").val(convenienceScore);
             $("#total-score").html(totalScore + "%");
+            $("#id_total_score").val(totalScore);
         }
 
         $("input[type='checkbox']").click(function() {
@@ -78,16 +79,15 @@
 </script>
 
 <div class="new-checklist">
-    {% csrf_token %}
-    <!-- <form method="POST" class="new-checklist-form-element"></form> -->
-    <form class="new-checklist-form-element">
+    <form method ="POST" class="new-checklist-form-element">
+        {% csrf_token %}
         <div class="new-checklist-section-1">
             <div class="new-checklist-header">
                 + New Checklist
             </div>
             <div class="new-checklist-buttons">
                 <div>
-                    <button class="new-checklist-save-button" onclick="window.location='{% url 'checklist-filled' %}'">
+                    <button type="submit" value="Save" class="new-checklist-save-button">
                         Save
                     </button>
                 </div>
@@ -817,51 +817,54 @@
                     </div>
                 </div>
         </div>
-    </form>
+    
 
-    <div class="new-checklist-score">
-        <div class="score-header-group">
-            <p id="score-header">Score</p>
-            <button id="score-info-button">
-                <img src="{% static 'info-button.png' %}">
-            </button>
-        </div>
-        <div class="score-bar-group">
-            <label for="price-score" class="score-label">Price</label>
-            <progress id="price-score" class="score-bar" value="0" max="1"></progress>
-            <p id="price-percent" class="score-percent">0%</p>
-        </div>
-        <div class="score-bar-group">
-            <label for="safety-score" class="score-label">Safety</label>
-            <progress id="safety-score" class="score-bar" value="0" max="13"></progress>
-            <p id="safety-percent" class="score-percent">0%</p>
-        </div>
-        <div class="score-bar-group">
-            <label for="convenience-score" class="score-label">Convenience</label>
-            <progress id="convenience-score" class="score-bar" value="0" max="10"></progress>
-            <p id="convenience-percent" class="score-percent">0%</p>
-        </div>
-        <div class="total-score-group">
-            <p id="total-score-header">TOTAL</p>
-            <p id="total-score">0%</p>
-        </div>
-        <div class="new-checklist-buttons">
-            <div>
-                <button class="new-checklist-save-button" onclick="window.location='{% url 'checklist-filled' %}'">
-                    Save
+        <div class="new-checklist-score">
+            <div class="score-header-group">
+                <p id="score-header">Score</p>
+                <button id="score-info-button">
+                    <img src="{% static 'info-button.png' %}">
                 </button>
             </div>
-            <div>
-                <button class="new-checklist-cancel-button" onclick="window.location='{% url 'checklist' %}'">
-                    Cancel
-                </button>
+            <div class="score-bar-group">
+                <label for="price-score" class="score-label">Price</label>
+                <progress id="price-score" class="score-bar" value="0" max="1"></progress>
+                <p id="price-percent" class="score-percent">0%</p>
             </div>
-            <div>
-                <button class="new-checklist-delete-button">
-                    Delete
-                </button>
+            <div class="score-bar-group">
+                <label for="safety-score" class="score-label">Safety</label>
+                <progress id="safety-score" class="score-bar" value="0" max="13"></progress>
+                <p id="safety-percent" class="score-percent">0%</p>
             </div>
-        </div>      
-    </div>
+            <div class="score-bar-group">
+                <label for="convenience-score" class="score-label">Convenience</label>
+                <progress id="convenience-score" class="score-bar" value="0" max="10"></progress>
+                <p id="convenience-percent" class="score-percent">0%</p>
+            </div>
+            <div class="total-score-group">
+                <p id="total-score-header">TOTAL</p>
+                {{ form.total_score.as_hidden }}
+                <!-- <input type="hidden" value="0" name="total_score" id="hidden-total-score" /> -->
+                <p id="total-score">0%</p>
+            </div>
+            <div class="new-checklist-buttons">
+                <div>
+                    <button type="submit" value="Save" class="new-checklist-save-button">
+                        Save
+                    </button>
+                </div>
+                <div>
+                    <button class="new-checklist-cancel-button" onclick="window.location='{% url 'checklist' %}'">
+                        Cancel
+                    </button>
+                </div>
+                <div>
+                    <button class="new-checklist-delete-button">
+                        Delete
+                    </button>
+                </div>
+            </div>      
+        </div>
+    </form>
 </div>
 {% endblock %}

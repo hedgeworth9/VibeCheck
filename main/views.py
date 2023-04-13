@@ -81,5 +81,8 @@ def safety_portal(request):
 class PropertyCreateView(CreateView):
     form_class = PropertyForm
     template_name = 'main/property_form.html'
-	# model = Property
-	# fields = ['name', 'type', 'address', 'notes', 'image', 'price'] 
+    success_url = 'checklist'
+
+    def form_invalid(self, form):
+        print(form.errors.as_data())
+        return HttpResponse("form is invalid.. this is just an HttpResponse object")

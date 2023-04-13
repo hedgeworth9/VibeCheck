@@ -42,33 +42,45 @@ class PropertyForm(forms.ModelForm):
 			'essential_institutions': forms.RadioSelect(attrs={'class': 'property-form-safety-radio'})
 		}
 
-	# name = forms.CharField(max_length=255, 
-	# 		widget=forms.TextInput(attrs={'placeholder':'Enter property name (e.g. Orchid Apartment)*'}))
-	# type = forms.CharField(max_length=255, widget=forms.TextInput(attrs={'placeholder':'Enter property type (e.g. lowrise, midrise, highrise, 2-storeyhouse)'}))
-	# address = forms.CharField(widget=forms.Textarea(attrs={'placeholder':'Enter address'}))
-	# notes = forms.CharField(widget=forms.Textarea(attrs={'placeholder':'Enter other notes (as needed)'}))
-	# image = forms.ImageField()
+	
 
-	# price_select = [
-    #     (1, 'Within budget'),
-    #     (0, 'Overbudget')
-    # ]
-	# price = forms.ChoiceField(widget=forms.RadioSelect, choices = price_select)
-
-	# class Meta:
-	# 	model = Property
-	# 	fields = '__all__'
-	# building_age = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# building_codes = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# fault_line = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# retrofitted = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# foundation_issues = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# soil = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# building_height = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# building_insurance = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# disaster_history = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# fire_exits = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# gas_valve = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# evacuation_zone = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# essential_institutions = models.DecimalField(default=0, decimal_places=1, max_digits=2)
-	# total_score = models.DecimalField(default=0, decimal_places=2, max_digits=10)
+	def clean(self):
+        # data from the form is fetched using super function
+		
+		super(PropertyForm, self).clean()
+         
+        # extract the username and text field from the data
+        
+		fields = ['price', 'building_age', 'buliding_codes', 'fault_line', 'retrofitted', 'foundation_issues',
+	    'soil', 'building_height', 'building_insurance', 'disaster_history', 'fire_exits', 'gas_valve',
+		'evacuation_zone', 'essential_institutions']
+	
+		# total_score = self.cleaned_data.get('total_score')
+		# total_score = float(total_score)
+		price = self.cleaned_data.get('price')
+		# price = str(price)
+		print(type(price))
+		building_age = str(self.cleaned_data.get('buillding_age'))
+		building_codes = str(self.cleaned_data.get('building_codes'))
+		fault_line = str(self.cleaned_data.get('fault_line'))
+		retrofitted = str(self.cleaned_data.get('retrofitted'))
+		foundation_issues = str(self.cleaned_data.get('foundation_issues'))
+		soil = str(self.cleaned_data.get('soil'))
+		building_height = str(self.cleaned_data.get('building_height'))
+		building_insurance = str(self.cleaned_data.get('building_insurance'))
+		disaster_history = str(self.cleaned_data.get('disaster_history'))
+		fire_exits = str(self.cleaned_data.get('fire_exits'))
+		gas_valve = str(self.cleaned_data.get('gas_valve'))
+		evacuation_zone = str(self.cleaned_data.get('evacuation_zone'))
+		essential_institutions = str(self.cleaned_data.get('essential_institutions'))
+			
+        # conditions to be met for the username length
+        # if len(username) < 5:
+        #     self._errors['username'] = self.error_class([
+        #         'Minimum 5 characters required'])
+        # if len(text) <10:
+        #     self._errors['text'] = self.error_class([
+        #         'Post Should Contain a minimum of 10 characters'])
+ 
+        # return any errors if found
+		return self.cleaned_data
