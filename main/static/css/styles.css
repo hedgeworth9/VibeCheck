@@ -311,29 +311,40 @@ button {
     width: 40%;
 }
 
-#safety-score {
-    color: #4CAB3C; 
-}
-
-#price-score {
+#price-percent, #safety-percent, #convenience-percent {
     color: #EA5838;
-}
+}   
 
-#convenience-score {
-    color: #FFC724; 
-}
-
-#price-percent {
-    color: #EA5838;
-}
-
-#safety-percent {
-    color: #4CAB3C; 
-}
-
-#convenience-percent {
-    color: #FFC724; 
-}
+#price-score, #safety-score, #convenience-score  {
+    --color: #EA5838; /* the progress color */
+    --background: #505358; /* the background color */
+  
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    height: 4vh;
+    width: 30vh;
+    margin: 0 10px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: var(--background);
+  }
+  progress[value]::-webkit-progress-bar {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: var(--background);
+  }
+  progress[value]::-webkit-progress-value {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: var(--color);
+  }
+  progress[value]::-moz-progress-bar {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    background: var(--color);
+  }
 
 .score-percent {
     font-family: 'Inter';
@@ -343,13 +354,10 @@ button {
     line-height: 140.62%; 
 }
 
-.score-bar {
-    background: #505358;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
+/* .score-bar {
     height: 3vh;
     width: 30vh;
-}
+} */
 
 .score-label {
     font-family: 'Inter';
@@ -608,17 +616,10 @@ button {
     gap: 1%;
 }
 
-.section-price {
+.section-price, .section-safety, .section-convenience {
     background: #EA5838;
 }
 
-.section-safety {
-    background: #4CAB3C;
-}
-
-.section-convenience {
-    background: #FFC724;
-}
 .section-price-header, .section-safety-header, .section-convenience-header {
     font-family: 'Inter';
     font-style: normal;
@@ -705,6 +706,60 @@ button {
     display: flex;
     padding-top: 5%;
     flex-direction: column;
+}
+
+.checklist-property-cards {
+    display: flex;
+    justify-content: space-around;
+    
+}
+
+.property-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 60vh;
+    width: 40vh;
+    background: #D4F7C3;
+    border-radius: 7px;
+    cursor: pointer;
+    min-width: 0;
+}
+
+.property-card-info {
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding-left: 10%;
+}
+
+.property-card-image-element {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.property-card-name {
+    width: 100%;
+    text-align: left;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 19px;
+    line-height: 140.62%;
+}
+
+.property-card-score {
+    vertical-align: middle;
+}
+
+.property-card-score-bar {
+    background: #505358;
+    border-radius: 5px;
+    height: 20%;
+    width: 50%;
 }
 
 .my-checklists-header {

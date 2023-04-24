@@ -1,13 +1,14 @@
 from django import forms
 from django.shortcuts import render, redirect
 from datetime import datetime
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.template import loader
 from .forms import NewUserForm, PropertyForm
 from django.contrib.auth import login, authenticate
 from django.contrib import messages
 from .models import Property
-from django.views.generic import ListView, DetailView, CreateView, DeleteView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
+from django.urls import reverse
 
 def home(request):
     template = loader.get_template('main/home.html')
@@ -69,20 +70,46 @@ def checklist_filled(request):
     context = {}
     return HttpResponse(template.render(context, request))        
 
-def checklists(request):
-    template = loader.get_template('main/checklist.html')
-    context = {}
+# def checklists(request):
+#     template = loader.get_template('main/checklist.html')
+#     context = {}
     return HttpResponse(template.render(context, request))
 
 def safety_portal(request):
 	template = loader.get_template('main/safety-portal.html')
 	context = {}
 	return HttpResponse(template.render(context, request))
+
+class PropertyListView(ListView):
+     model = Property
+     template_name = 'main/checklist.html'
+     context_object_name = 'all_properties'
+     
 class PropertyCreateView(CreateView):
     form_class = PropertyForm
     template_name = 'main/property_form.html'
     success_url = 'checklist'
 
+    # def form_valid(self, form):
+    #     property = form.save(commit=False)
+
+    #     # I do other stuff here
+    #     property.save()
+
+    #     return HttpResponseRedirect(reverse('home'))
+
     def form_invalid(self, form):
         print(form.errors.as_data())
         return HttpResponse("form is invalid.. this is just an HttpResponse object")
+
+class PropertyUpdateView(UpdateView):
+     form_class = PropertyForm
+     model = Property
+     template_name = 'main/property_update_form.html'
+     success_url = 'checklist'
+
+    #  def get_object(self, id):
+    #     try:
+    #         return Property.objects.get(pk=id)
+    #     except Property.DoesNotExist:
+    #         return False

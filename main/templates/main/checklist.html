@@ -5,13 +5,45 @@
     <div class="my-checklists-header">
         My Checklists
     </div>
-    <div>
-        <button class="new-checklist-button" onclick="location.href = '{% url 'new-checklist' %}'">
-            <div class="new-checklist-button-text">
-                <p class="new-checklist-button-text-plus">+</p> 
-                <p class="new-checklist-button-text-create-new">Create New</p>
+    <div class="checklist-property-cards">
+        <div>
+            <button class="new-checklist-button" onclick="location.href = '{% url 'new-checklist' %}'">
+                <div class="new-checklist-button-text">
+                    <p class="new-checklist-button-text-plus">+</p> 
+                    <p class="new-checklist-button-text-create-new">Create New</p>
+                </div>
+            </button>
+        </div>
+        {% for property in all_properties %}
+        <a href="{% url 'update-checklist' property.pk %}">
+            <div class="property-card" id="property-card-{{ property.name }}-id" >
+                <div class="property-card-image">
+                    <a href="{% url 'update-checklist' property.id %}">
+                        <img class="property-card-image-element" src="{{ property.image.url }}">
+                    </a>
+                </div>
+                <div class="property-card-info">
+                    <div class="property-card-name">
+                        {{ property.name }}
+                    </div>
+                    <div class="property-card-scores">
+                        <div class="property-card-score">
+                            <label for="price-score" class="property-card-score-label">Price</label>
+                            <progress id="price-score" class="property-card-score-bar" value="{{ property.price }}" max="1"></progress>
+                        </div>
+                        <div class="property-card-score">
+                            <label for="safety-score" class="property-card-score-label">Safety</label>
+                            <progress id="safety-score" class="property-card-score-bar" value="{{ property.safety }}" max="13"></progress>
+                        </div>
+                        <div class="property-card-score">
+                            <label for="convenience-score" class="property-card-score-label">Convenience</label>
+                            <progress id="convenience-score" class="property-card-score-bar" value="{{ property.convenience }}" max="10"></progress>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </button>
+        </a>
+        {% endfor %}
     </div>
     <div class="checklist-modal">
         <div class="checklist-modal-header">

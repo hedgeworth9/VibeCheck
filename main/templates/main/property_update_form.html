@@ -18,6 +18,8 @@
         //     }
         //     totalScore += parseFloat(radioValue);
         // });
+        scoreUpdate();
+
         function scoreUpdate() {
             let scores = getChecklistItems();
             //the_value = jQuery('input:radio:checked').val();
@@ -42,14 +44,52 @@
             $("#id_safety").val(safetyScore);
             $("#id_convenience").val(convenienceScore);
             $("#id_total_score").val(totalScore);
+            
+            if(totalScore >= 80) {
+                $("#total-score").css('color', '#4CAB3C');
+            } else if (totalScore >= 60 && totalScore < 80) {
+                $("#total-score").css('color', '#FFC724');
+            } else if (totalScore < 60) {
+                $("#total-score").css('color', '#EA5838');
+            }
 
             if(priceScore == 0) {
-                $(".section-price").css('background', '#EA5838');    
+                $(".section-price").css('background', '#EA5838');
+                $("#price-score").css('--color', '#EA5838');
+                $("#price-percent").css('color', '#EA5838');    
             } else if(priceScore == 1) {
                 $(".section-price").css('background', '#4CAB3C');
+                $("#price-score").css('--color', '#4CAB3C');
+                $("#price-percent").css('color', '#4CAB3C');
             }
-            
-            
+
+            if(safetyScore < 7) {
+                $(".section-safety").css('background', '#EA5838');
+                $("#safety-score").css('--color', '#EA5838');
+                $("#safety-percent").css('color', '#EA5838');    
+            } else if(safetyScore >= 7 && safetyScore < 10) {
+                $(".section-safety").css('background', '#FFC724');
+                $("#safety-score").css('--color', '#FFC724');
+                $("#safety-percent").css('color', '#FFC724');
+            } else if(safetyScore >= 10) {
+                $(".section-safety").css('background', '#4CAB3C');
+                $("#safety-score").css('--color', '#4CAB3C');
+                $("#safety-percent").css('color', '#4CAB3C');
+            }
+
+            if(convenienceScore < 7) {
+                $(".section-convenience").css('background', '#EA5838');
+                $("#convenience-score").css('--color', '#EA5838');
+                $("#convenience-percent").css('color', '#EA5838');    
+            } else if(convenienceScore >= 7 && convenienceScore < 10) {
+                $(".section-convenience").css('background', '#FFC724');
+                $("#convenience-score").css('--color', '#FFC724');
+                $("#convenience-percent").css('color', '#FFC724');
+            } else if(convenienceScore >= 10) {
+                $(".section-convenience").css('background', '#4CAB3C');
+                $("#convenience-score").css('color', '#4CAB3C');
+                $("#convenience-percent").css('color', '#4CAB3C');
+            }
         }
 
         $("input[type='checkbox']").click(function() {

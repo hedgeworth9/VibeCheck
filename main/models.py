@@ -5,7 +5,7 @@ class Property(models.Model):
     type = models.CharField(max_length=255)
     address = models.TextField()
     notes = models.TextField()
-    image = models.ImageField(blank=True, upload_to='user_propery_images')
+    image = models.ImageField(blank=True, upload_to='user_property_images')
     price_select = [
         ('1', 'Within budget'),
         ('0', 'Overbudget')
@@ -101,6 +101,8 @@ class Property(models.Model):
         ('0', 'Far away')
     ]
     essential_institutions = models.CharField(max_length=255, choices=essential_institutions_select)
+    safety = models.DecimalField(default=0, decimal_places=2, max_digits=10)
+    convenience = models.IntegerField(default=0)
     total_score = models.DecimalField(default=0, decimal_places=2, max_digits=10)
 
     def __str__(self):

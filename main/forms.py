@@ -50,16 +50,10 @@ class PropertyForm(forms.ModelForm):
 		super(PropertyForm, self).clean()
          
         # extract the username and text field from the data
-        
-		fields = ['price', 'building_age', 'buliding_codes', 'fault_line', 'retrofitted', 'foundation_issues',
-	    'soil', 'building_height', 'building_insurance', 'disaster_history', 'fire_exits', 'gas_valve',
-		'evacuation_zone', 'essential_institutions']
 	
-		# total_score = self.cleaned_data.get('total_score')
-		# total_score = float(total_score)
 		price = self.cleaned_data.get('price')
-		# price = str(price)
-		print(type(price))
+		safety = float(self.cleaned_data.get('safety'))
+		convenience = float(self.cleaned_data.get('convenience'))
 		building_age = str(self.cleaned_data.get('buillding_age'))
 		building_codes = str(self.cleaned_data.get('building_codes'))
 		fault_line = str(self.cleaned_data.get('fault_line'))
