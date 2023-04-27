@@ -101,6 +101,23 @@ class Property(models.Model):
         ('0', 'Far away')
     ]
     essential_institutions = models.CharField(max_length=255, choices=essential_institutions_select)
+    
+    hospital = models.BooleanField(default=False)
+    police_station = models.BooleanField(default=False)
+    fire_station = models.BooleanField(default=False)
+    school = models.BooleanField(default=False)
+    workplace = models.BooleanField(default=False)
+    grocery_or_market = models.BooleanField(default=False)
+    laundromat = models.BooleanField(default=False)
+    water_filling_station = models.BooleanField(default=False)
+    restaurant = models.BooleanField(default=False)
+    mall = models.BooleanField(default=False)
+    bills_payment_center = models.BooleanField(default=False)
+    transport_terminal = models.BooleanField(default=False)
+    gas_station_terminal = models.BooleanField(default=False)
+    other = models.BooleanField(default=False)
+    other_text = models.CharField(max_length=255, blank=True)
+
     safety = models.DecimalField(default=0, decimal_places=2, max_digits=10)
     convenience = models.IntegerField(default=0)
     total_score = models.DecimalField(default=0, decimal_places=2, max_digits=10)
