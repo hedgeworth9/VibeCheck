@@ -1,6 +1,7 @@
 {% extends 'main/base-signed-in.html' %}
 
 {% block body %}
+
 <div class="checklist">
     <div class="my-checklists-header">
         My Checklists
@@ -29,15 +30,31 @@
                     <div class="property-card-scores">
                         <div class="property-card-score">
                             <label for="price-score" class="property-card-score-label">Price</label>
-                            <progress id="price-score" class="property-card-score-bar" value="{{ property.price }}" max="1"></progress>
+                            {% if property.price|add:"0" == 0 %}
+                            <progress id="price-score-red" class="property-card-score-bar" value="{{ property.price }}" max="1"></progress>
+                            {% elif property.price|add:"0" == 1 %}
+                            <progress id="price-score-green" class="property-card-score-bar" value="{{ property.price }}" max="1"></progress>
+                            {% endif %}
                         </div>
                         <div class="property-card-score">
                             <label for="safety-score" class="property-card-score-label">Safety</label>
-                            <progress id="safety-score" class="property-card-score-bar" value="{{ property.safety }}" max="13"></progress>
+                            {% if property.safety|add:"0" < 7 %}
+                            <progress id="safety-score-red" class="property-card-score-bar" value="{{ property.safety }}" max="13"></progress>
+                            {% elif property.safety|add:"0" >= 7 and property.safety|add:"0" < 10 %}
+                            <progress id="safety-score-yellow" class="property-card-score-bar" value="{{ property.safety }}" max="13"></progress>
+                            {% elif property.safety|add:"0" >= 10 %}
+                            <progress id="safety-score-green" class="property-card-score-bar" value="{{ property.safety }}" max="13"></progress>
+                            {% endif %}
                         </div>
                         <div class="property-card-score">
                             <label for="convenience-score" class="property-card-score-label">Convenience</label>
-                            <progress id="convenience-score" class="property-card-score-bar" value="{{ property.convenience }}" max="10"></progress>
+                            {% if property.convenience|add:"0" < 7 %}
+                            <progress id="convenience-score-red" class="property-card-score-bar" value="{{ property.convenience }}" max="10"></progress>
+                            {% elif property.convenience|add:"0" >= 7 and property.convenience|add:"0" < 10 %}
+                            <progress id="convenience-score-yellow" class="property-card-score-bar" value="{{ property.convenience }}" max="10"></progress>
+                            {% elif property.convenience|add:"0" >= 10 %}
+                            <progress id="convenience-score-green" class="property-card-score-bar" value="{{ property.convenience }}" max="10"></progress>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

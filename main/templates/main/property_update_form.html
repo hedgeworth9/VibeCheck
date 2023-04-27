@@ -55,39 +55,47 @@
 
             if(priceScore == 0) {
                 $(".section-price").css('background', '#EA5838');
+                $(".section-price").css('color', 'white');
                 $("#price-score").css('--color', '#EA5838');
                 $("#price-percent").css('color', '#EA5838');    
             } else if(priceScore == 1) {
                 $(".section-price").css('background', '#4CAB3C');
+                $(".section-price").css('color', 'white ');
                 $("#price-score").css('--color', '#4CAB3C');
                 $("#price-percent").css('color', '#4CAB3C');
             }
 
             if(safetyScore < 7) {
                 $(".section-safety").css('background', '#EA5838');
+                $(".section-safety").css('color', 'white');
                 $("#safety-score").css('--color', '#EA5838');
                 $("#safety-percent").css('color', '#EA5838');    
             } else if(safetyScore >= 7 && safetyScore < 10) {
                 $(".section-safety").css('background', '#FFC724');
+                $(".section-safety").css('color', '#505358');
                 $("#safety-score").css('--color', '#FFC724');
                 $("#safety-percent").css('color', '#FFC724');
             } else if(safetyScore >= 10) {
                 $(".section-safety").css('background', '#4CAB3C');
+                $(".section-safety").css('color', 'white');
                 $("#safety-score").css('--color', '#4CAB3C');
                 $("#safety-percent").css('color', '#4CAB3C');
             }
 
             if(convenienceScore < 7) {
                 $(".section-convenience").css('background', '#EA5838');
+                $(".section-convenience").css('color', 'white');
                 $("#convenience-score").css('--color', '#EA5838');
                 $("#convenience-percent").css('color', '#EA5838');    
             } else if(convenienceScore >= 7 && convenienceScore < 10) {
                 $(".section-convenience").css('background', '#FFC724');
+                $(".section-convenience").css('color', '#505358');
                 $("#convenience-score").css('--color', '#FFC724');
                 $("#convenience-percent").css('color', '#FFC724');
             } else if(convenienceScore >= 10) {
                 $(".section-convenience").css('background', '#4CAB3C');
-                $("#convenience-score").css('color', '#4CAB3C');
+                $(".section-convenience").css('color', 'white');
+                $("#convenience-score").css('--color', '#4CAB3C');
                 $("#convenience-percent").css('color', '#4CAB3C');
             }
         }

@@ -11,17 +11,8 @@
     var safetyScore = 0;
     var convenienceScore = 0;
     $(document).ready(function(){
-        // $("input[type='radio']").click(function(){
-        //     var radioValue = $("input[class='property-form-radio']:checked").val();
-        //     if(radioValue){
-        //         // alert("Your are a - " + radioValue);
-        //     }
-        //     totalScore += parseFloat(radioValue);
-        // });
         function scoreUpdate() {
             let scores = getChecklistItems();
-            //the_value = jQuery('input:radio:checked').val();
-            //the_value = jQuery('input[name=macro]:radio:checked').val();
             var priceScore = scores[0];
             var safetyScore = scores[1];
             var convenienceScore = scores[2];
@@ -53,38 +44,46 @@
 
             if(priceScore == 0) {
                 $(".section-price").css('background', '#EA5838');
+                $(".section-price").css('color', 'white');
                 $("#price-score").css('--color', '#EA5838');
                 $("#price-percent").css('color', '#EA5838');    
             } else if(priceScore == 1) {
                 $(".section-price").css('background', '#4CAB3C');
+                $(".section-price").css('color', 'white ');
                 $("#price-score").css('--color', '#4CAB3C');
                 $("#price-percent").css('color', '#4CAB3C');
             }
 
             if(safetyScore < 7) {
                 $(".section-safety").css('background', '#EA5838');
+                $(".section-safety").css('color', 'white');
                 $("#safety-score").css('--color', '#EA5838');
                 $("#safety-percent").css('color', '#EA5838');    
             } else if(safetyScore >= 7 && safetyScore < 10) {
                 $(".section-safety").css('background', '#FFC724');
+                $(".section-safety").css('color', '#505358');
                 $("#safety-score").css('--color', '#FFC724');
                 $("#safety-percent").css('color', '#FFC724');
             } else if(safetyScore >= 10) {
                 $(".section-safety").css('background', '#4CAB3C');
+                $(".section-safety").css('color', 'white');
                 $("#safety-score").css('--color', '#4CAB3C');
                 $("#safety-percent").css('color', '#4CAB3C');
             }
 
             if(convenienceScore < 7) {
                 $(".section-convenience").css('background', '#EA5838');
+                $(".section-convenience").css('color', 'white');
                 $("#convenience-score").css('--color', '#EA5838');
                 $("#convenience-percent").css('color', '#EA5838');    
             } else if(convenienceScore >= 7 && convenienceScore < 10) {
                 $(".section-convenience").css('background', '#FFC724');
+                $(".section-convenience").css('color', '#505358');
                 $("#convenience-score").css('--color', '#FFC724');
                 $("#convenience-percent").css('color', '#FFC724');
             } else if(convenienceScore >= 10) {
                 $(".section-convenience").css('background', '#4CAB3C');
+                $(".section-convenience").css('color', 'white');
                 $("#convenience-score").css('color', '#4CAB3C');
                 $("#convenience-percent").css('color', '#4CAB3C');
             }
@@ -806,61 +805,46 @@
                     </div>
                     <div class="section-convenience-chekboxes">
                         <div>
-                            <input type="checkbox" id="convenience-1" name="convenience">
-                            <label for="convenience-1">Hospital</label>
+                            {{ form.hospital }} {{ form.hospital.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-2" name="convenience">
-                            <label for="convenience-2">Police Station</label>
+                            {{ form.police_station }} {{ form.police_station.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-3" name="convenience">
-                            <label for="convenience-3">Fire Station</label>
+                            {{ form.fire_station }} {{ form.fire_station.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-4" name="convenience">
-                            <label for="convenience-4">School</label>
+                            {{ form.school }} {{ form.school.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-5" name="convenience">
-                            <label for="convenience-5">Workplace</label>
+                            {{ form.workplace }} {{ form.workplace.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-6" name="convenience">
-                            <label for="convenience-6">Grocery or Market</label>
+                            {{ form.grocery_or_market }} {{ form.grocery_or_market.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-7" name="convenience">
-                            <label for="convenience-7">Laundromat</label>
+                            {{ form.laundromat }} {{ form.laundromat.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-8" name="convenience">
-                            <label for="convenience-8">Water Filling Station</label>
+                            {{ form.water_filling_station }} {{ form.water_filling_station.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-9" name="convenience">
-                            <label for="convenience-9">Restaurant</label>
+                            {{ form.restaurant }} {{ form.restaurant.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-10" name="convenience">
-                            <label for="convenience-10">Mall</label>
+                            {{ form.mall }} {{ form.mall.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-11" name="convenience">
-                            <label for="convenience-11">Bills Payment Center</label>
+                            {{ form.bills_payment_center }} {{ form.bills_payment_center.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-12" name="convenience">
-                            <label for="convenience-12">Transport Terminal</label>
+                            {{ form.transport_terminal }} {{ form.transport_terminal.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-13" name="convenience">
-                            <label for="convenience-13">Gas Station Terminal</label>
+                            {{ form.gas_station_terminal }} {{ form.gas_station_terminal.label}}
                         </div>
                         <div>
-                            <input type="checkbox" id="convenience-14" name="convenience">
-                            <input type="text" id="convenience-14" name="convenience" class="convenience-text-field">
-                            <label for="convenience-14">Other</label>
+                            {{ form.other }} {{ form.other_text }} {{ form.other.label }}
                         </div>
                     </div>
                 </div>

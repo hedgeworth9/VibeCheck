@@ -315,16 +315,21 @@ button {
     color: #EA5838;
 }   
 
-#price-score, #safety-score, #convenience-score  {
+
+
+#price-score, #safety-score, #convenience-score,
+#price-score-red, #price-score-green, 
+#safety-score-red, #safety-score-yellow, #safety-score-green, 
+#convenience-score-red, #convenience-score-yellow, #convenience-score-green  {  
     --color: #EA5838; /* the progress color */
     --background: #505358; /* the background color */
-  
+
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
     border: none;
-    height: 4vh;
-    width: 30vh;
+    height: 3vh;
+    width: 21vh;
     margin: 0 10px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
@@ -345,6 +350,28 @@ button {
     border-radius: 5px;
     background: var(--color);
   }
+
+  #price-score-red, #safety-score-red, #convenience-score-red {
+    --color: #EA5838; /* the progress color */
+    --background: #505358; /* the background color */
+  
+}
+
+#safety-score-yellow, #convenience-score-yellow {
+    --color: #FFC724; /* the progress color */
+    --background: #505358; /* the background color */
+  
+}
+
+#price-score-green, #safety-score-green, #convenience-score-green {
+    --color: #4CAB3C; /* the progress color */
+    --background: #505358; /* the background color */
+  
+}
+#price-score, #safety-score, #convenience-score {
+    width: 30vh;
+    height: 5vh;
+}
 
 .score-percent {
     font-family: 'Inter';
@@ -618,6 +645,8 @@ button {
 
 .section-price, .section-safety, .section-convenience {
     background: #EA5838;
+    /* color: #505358; */
+    color: white;
 }
 
 .section-price-header, .section-safety-header, .section-convenience-header {
@@ -629,7 +658,7 @@ button {
     /* identical to box height */
     
     letter-spacing: -0.02em;
-    color: white;
+    /* color: white; */
     /* color: #505358; */
     
 }
@@ -649,17 +678,10 @@ button {
     font-size: 22px;
     line-height: 140.62%;
     /* identical to box height, or 31px */
-    
-    color: white;
-    /* color: #505358; */
 }
 
 .new-checklist-section-3 {
     color: white;
-}
-
-.section-convenience, .section-convenience-header, .section-convenience-question {
-    color: #505358;
 }
 
 .section-price-details, .section-safety-details, .section-convenience-details {
@@ -711,14 +733,13 @@ button {
 .checklist-property-cards {
     display: flex;
     justify-content: space-around;
-    
 }
 
 .property-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 
     height: 60vh;
     width: 40vh;
@@ -734,6 +755,8 @@ button {
 
     width: 100%;
     padding-left: 10%;
+    padding-right: 5%;
+    padding-bottom: 5%;
 }
 
 .property-card-image-element {
@@ -755,7 +778,7 @@ button {
     vertical-align: middle;
 }
 
-.property-card-score-bar {
+.property-card-score-bar-green, .property-card-score-bar-yellow, .property-card-score-bar-red {
     background: #505358;
     border-radius: 5px;
     height: 20%;
